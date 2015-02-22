@@ -1,0 +1,4 @@
+/app/config/*_prod.yml
+/docroot/
+/output_*/
+/sass/.sass-cache/

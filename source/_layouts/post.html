@@ -1,0 +1,114 @@
+{% extends "base" %}
+{% block styles %}
+<style>
+.post .post-meta .author-image {
+    background-image: url({{ site.url }}/assets/images/authors/beau-100x100.jpg);
+}
+</style>
+{% endblock %}
+{% block meta %}
+    <meta name="description" content="{{ page.excerpt }}">
+    <meta name="keywords" content="sculpin, {% for tag in page.tags %}{% if loop.first %}, {% endif %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:type" content="article" />
+    {% if page.social_image %}
+        <meta property="og:image" content="{{ site.url }}{{ page.social_image }}" />
+    {% endif %}
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ page.blocks.content|raw|striptags|split(' ')|slice(0,50)|join(' ') }} ...{% endif %}" />
+
+    <!-- Twitter -->
+    {% if page.social_image %}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image:src" content="{{ site.url }}{{ page.social_image }}">
+    {% elseif page.cover_image %}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image:src" content="{{ site.url }}{{ page.cover_image }}">
+    {% else %}
+        <meta name="twitter:card" content="summary" />
+    {% endif %}
+    <meta name="twitter:title" content="{{ page.title }}" />
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ page.blocks.content|raw|striptags|split(' ')|slice(0,50)|join(' ') }} ...{% endif %}" />
+    <meta name="twitter:creator" content="@beausimensen" />
+    <meta name="twitter:site" content="@getsculpin" />
+{% endblock %}
+{% block content_wrapper %}
+    <article class="post">
+        <div class="post-meta">
+            <div class="post-reading">
+                <span class="post-reading-time"></span> read
+            </div>
+            <h1 class="post-title">{{ page.title }}</h1>
+            <div class="post-meta-text">
+                <span class="author-image">Author Image</span>
+                <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="{{ site.url }}/authors/beau">Beau Simensen</a>
+                on
+                <time datetime="{{ page.date|date('c') }}" pubdate>
+                    <span class='month'>{{ page.date|date('M') }}</span> <span class='day'>{{ page.date|date('jS') }}</span> <span class='year'>{{ page.date|date('Y') }}</span>
+                </time>
+            </div>
+        </div>
+        <section class="post-content">
+            {% if page.product %}
+                <div class="product-image">
+                    <a href="{{ page.product.link }}"><img src="{{ page.product.image }}"></a>
+                    <a class="shop" href="{{ page.product.link }}">Buy Now</a>
+                </div>
+            {% endif %}
+            {% block content %}{% endblock %}
+        </section>
+        <footer class="post-footer">
+            <p class="share">
+                <span>
+                    Share this post on
+                </span>
+                <a class="icon-twitter" target="_blank" href="http://twitter.com/share?text={{ page.title|url_encode }}&amp;via=ddd_io&amp;source={{ site.url|url_encode}}{{ page.url|url_encode }}">
+                    <i class="fa fa-twitter-square"></i><span class="hidden">twitter</span>
+                </a>
+
+                <a class="icon-reddit" target="_blank" href="http://reddit.com/submit?title={{ page.title|url_encode }}&amp;url={{ site.url|url_encode}}{{ page.url|url_encode }}/">
+                    <i class="fa fa-reddit-square"></i><span class="hidden">reddit</span>
+                </a>
+
+                <a class="icon-hacker-news" target="_blank" href="http://news.ycombinator.com/submitlink?t={{ page.title|url_encode }}&amp;u={{ site.url|url_encode}}{{ page.url|url_encode }}/">
+                    <i class="fa fa-hacker-news"></i><span class="hidden">hacker news</span>
+                </a>
+
+                <a class="icon-google-plus" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url={{ site.url|url_encode}}{{ page.url|url_encode }}">
+                    <i class="fa fa-google-plus-square"></i><span class="hidden">google+</span>
+                </a>
+
+                <a class="icon-facebook" target="_blank" href="//www.facebook.com/sharer.php?t={{ page.title|url_encode }}&amp;u={{ site.url|url_encode}}{{ page.url|url_encode }}">
+                    <i class="fa fa-facebook-square"></i><span class="hidden">facebook</span>
+                </a>
+            </p>
+
+            {% if page.tags %}
+                <p class="tags">Tagged with
+                    {% for tag in page.tags %}
+                        <a class="tag" href="{{ site.url }}/tags/{{ page.tags_normalized[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            {% endif %}
+        </footer>
+    </article>
+
+    <div id="disqus_thread" aria-live="polite">
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+    var disqus_shortname = '{{ site.disqus_shortname }}';
+    var disqus_identifier = '{{ site.url }}{{ page.url }}';
+    var disqus_url = '{{ site.url }}{{ page.url }}';
+    var disqus_script = 'embed.js';
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+{% endblock %}

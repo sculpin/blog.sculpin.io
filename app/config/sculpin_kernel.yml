@@ -1,0 +1,7 @@
+sculpin_content_types:
+    posts:
+        taxonomies:
+            - name: tags
+              strategies:
+                - \Sculpin\Contrib\Taxonomy\PermalinkStrategy\ConvertToLowercaseStrategy
+                - \Sculpin\Contrib\Taxonomy\PermalinkStrategy\TranslateSpacesToDashesStrategy

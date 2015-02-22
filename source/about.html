@@ -1,0 +1,145 @@
+---
+title: "#ossart: a ninjagrl and dflydev collaboration"
+use:
+    - posts
+
+---
+{% extends "base" %}
+{% block title %}#ossart: a ninjagrl and dflydev collaboration{% endblock %}
+{% block styles %}
+<style>
+.content .post .post-meta-text .product-image img {
+    display: block;
+    margin-top: 1em;
+}
+.content .post .post-meta-text .product-image a.shop {
+    margin-top: 1em;
+    margin-bottom: .5em;
+    display: inline-block;
+    font-weight: bolder;
+    padding: .5em 1.5em;
+    color: #fff;
+    border-radius: 1.5em;
+    background-color: #2980b9;
+    border: 1px solid #1f628d;
+    text-decoration: none;
+    font-family: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.product-image a.shop:hover {
+    background-color: #3498db;
+}
+
+</style>
+{% endblock %}
+{% block meta %}
+    <meta name="description" content="{{ page.excerpt }}">
+    <meta name="keywords" content="ninjagrl, #ossart, art, painting, beau, beau simensen, {% for tag in page.tags %}{% if loop.first %}, {% endif %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ site.url }}/assets/images/social.png" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
+    <meta property="og:description" content="Paintings by ninjagrl that have been inspired by the names of open-source projects, services, PHP community lingo, and related technical jargon." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:src" content="{{ site.url }}/assets/images/social.jpg">
+    <meta name="twitter:title" content="{{ page.title }}" />
+    <meta name="twitter:description" content="Paintings by ninjagrl that have been inspired by the names of open-source projects, services, PHP community lingo, and related technical jargon." />
+    <meta name="twitter:site" content="@ninjagrlstuff" />
+{% endblock %}
+{% block content %}
+    <header>
+        <!--
+        <img src="{{ site.url }}/assets/images/social.jpg" style="max-width: 100%; height: auto;">
+        -->
+        <h1>#ossart</h1>
+        <p>
+            Paintings from <a href="http://ninjagrl.com">ninjagrl</a> that have been inspired by the names of open-source projects, services, PHP community lingo, and related technical jargon. In collaboration with <a href="http://dflydev.com">dflydev</a>.
+        </p>
+    </header>
+
+    <div class="post">
+        <div class="post-content">
+
+            <hr>
+            <h2>ninjagrl</h2>
+            <p>
+                Between coming to the occasional PHP conferences and hearing <a href="https://beau.io">Beau Simensen</a> (her husband) and <a href="http://davedevelopment.co.uk/">Dave Marshall</a> talking on <a href="http://thatpodcast.io">That Podcast</a>, <a href="http://ninjagrl.com">ninjagrl</a> ends up hearing a ton of talk about the open-source world. She found that some of the names for things in that world can sound interesting, silly, or outlandish to people who do not live and breathe software.
+            </p>
+            <p>
+                One day, after listening to a particularly long episode of That Podcast, she came up with the idea of creating paintings inspired by just the names that sounded interesting to her. Open-source projects. Languages. Libraries. Services. All would be fair game.
+            </p>
+            <p>
+                And thus, a project was born.
+            </p>
+            <p>
+                The results are one part humor, one part cute, and one part non-programmer alternate/obvious interpretation of something software developers take for granted as something else entirely.
+            </p>
+            <p>
+                The goal was to highlight these projects next to their ninjagrl interpretation. The juxtaposition is quite entertaining.
+            </p>
+            <br>
+            <h2>dflydev</h2>
+            <p>
+                The other half of the #ossart collaboration is <a href="http://dflydev.com">dflydev</a>, Beau's consulting company. dflydev's contribution is providing technical support for the project. The goal is to open-source some of the infrastructure that will be used to support the #ossart project.
+            </p>
+            <hr>
+        </div>
+    </div>
+
+    {% set year = '0' %}
+    {% for post in data.posts %}
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" role="article">
+            <div class="article-item">
+                <header class="post-header">
+                    {% set this_year %}{{ post.date | date("Y") }}{% endset %}
+                    {% if year != this_year %}
+                        {% set month = '0' %}
+                        {% set year = this_year %}
+                        <span class="year-group">{{ year }}</span>
+                    {% endif %}
+                    <h2 class="post-title" itemprop="name">
+                        <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
+                        <small>
+                            <time datetime="{{ post.date|date('c') }}" pubdate>
+                                <span class='month'>{{ post.date|date('M') }}</span> <span class='day'>{{ post.date|date('jS') }}</span> <span class='year'>{{ post.date|date('Y') }}</span>
+                            </time>
+                        </small>
+                    </h2>
+                </header>
+                <div class="post-meta">
+                    <div class="post-meta-text">
+                        <!--
+                        <span class="by">By</span> <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="{{ site.url }}/authors/beau">Beau Simensen</a>
+                        -->
+                        <span class="on">
+                            on
+                            <time datetime="{{ post.date|date('c') }}" pubdate>
+                                <span class='month'>{{ post.date|date('M') }}</span> <span class='day'>{{ post.date|date('jS') }}</span> <span class='year'>{{ post.date|date('Y') }}</span>
+                            </time>
+                        </span>
+
+                        {% if post.product %}
+                            <div class="product-image">
+                                <a href="{{ post.url }}"><img style="box-shadow: .25em .25em .75em #636254;" src="{{ post.product.thumb }}"></a>
+                                <a class="shop" href="{{ post.product.link }}">Buy Now</a>
+                            </div>
+                        {% endif %}
+
+                        {%- if post.tags -%}
+                            <div>
+                                Tagged
+                                {% for tag in post.tags %}
+                                    <a class="tag" href="{{ site.url }}/tags/{{ post.tags_normalized[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                                </div>
+                        {%- endif -%}
+                    </div>
+                </div>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}
