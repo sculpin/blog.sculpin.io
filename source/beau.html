@@ -11,10 +11,10 @@ excerpt: "Beau has developed software since 1998 and has been studying DDD since
 {% extends "base" %}
 {% block meta %}
     <meta name="description" content="{{ page.excerpt }}">
-    <meta name="keywords" content="beau, beau simensen, ddd, domain-driven design, cqrs, event sourcing, {% for tag in page.tags %}{% if loop.first %}, {% endif %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}" />
+    <meta name="keywords" content="beau, beau simensen, sculpin, static site generator, {% for tag in page.tags %}{% if loop.first %}, {% endif %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}" />
 
     <!-- Facebook -->
-    <meta property="og:title" content="ddd.io author {{ page.title }}" />
+    <meta property="og:title" content="Sculpin's Blog author {{ page.title }}" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="{{ site.url }}/assets/images/authors/beau-600x600.jpg" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
@@ -22,10 +22,10 @@ excerpt: "Beau has developed software since 1998 and has been studying DDD since
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="ddd.io author {{ page.title }}" />
+    <meta name="twitter:title" content="Sculpin's Blog author {{ page.title }}" />
     <meta name="twitter:description" content="{{ page.excerpt }}" />
     <meta name="twitter:image" content="{{ site.url }}/assets/images/authors/beau-600x600.jpg" />
-    <meta name="twitter:site" content="@ddd_io" />
+    <meta name="twitter:site" content="@getsculpin" />
 {% endblock %}
 {% block content %}
     <header>

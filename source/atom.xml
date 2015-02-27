@@ -4,7 +4,7 @@ permalink: atom.xml
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title><![CDATA[ddd.io • Exploring DDD, CQRS, & Event Sourcing]]></title>
+    <title><![CDATA[Sculpin's Blog]]></title>
     <link href="{{ site.url }}/atom.xml" rel="self"/>
     <link href="{{ site.url }}/"/>
     <updated>{{ site.calculated_date | date('c') }}</updated>
