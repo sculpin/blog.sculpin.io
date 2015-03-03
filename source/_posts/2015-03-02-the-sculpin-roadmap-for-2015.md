@@ -34,7 +34,7 @@ With Sculpin 3 the minimum supported PHP version will be bumped to PHP 7 *if the
 
 This is a major change over the previously supported PHP 5.3.2. Even now I'm only running PHP 5.5 on my local development environments so this will be huge for me as well.
 
-Sculpin 2 will continue to work with PHP 5.3.2+ so people who are unable or unwilling to upgrade to PHP 7 will still be able to use Sculpin. However, I'd love to be able to help keep the PHP community moving toward using current and supported versions of PHP. As already hintd at, in the past I've been pretty horrible about this myself. Time to change that.
+Sculpin 2 will continue to work with PHP 5.3.2+ so people who are unable or unwilling to upgrade to PHP 7 will still be able to use Sculpin. However, I'd love to be able to help keep the PHP community moving toward using current and supported versions of PHP. As already hinted at, in the past I've been pretty horrible about this myself. Time to change that.
 
 ## Markdown, Markdown, Markdown
 
