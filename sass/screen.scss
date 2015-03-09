@@ -9,7 +9,6 @@ $darkBase: #506E79;
 $mediumBase: #7092a1;
 $lightBase: #B1C4CB;
 
-
 * {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -47,6 +46,15 @@ body {
 	-webkit-font-feature-settings: "liga", "dlig";
 	-o-font-feature-settings: "liga", "dlig";
 	font-feature-settings: "liga", "dlig";
+}
+
+span.caption {
+	color: $lightBase;
+	font-style: italic;
+	font-size: .75em;
+	a {
+		color: inherit;
+	}
 }
 
 .content article:last-of-type .article-item {

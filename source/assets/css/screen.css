@@ -37,6 +37,13 @@ body {
   -o-font-feature-settings: "liga", "dlig";
   font-feature-settings: "liga", "dlig"; }
 
+span.caption {
+  color: #B1C4CB;
+  font-style: italic;
+  font-size: .75em; }
+  span.caption a {
+    color: inherit; }
+
 .content article:last-of-type .article-item {
   border: 0; }
 
