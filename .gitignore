@@ -1,4 +1,4 @@
-/app/config/*_prod.yml
+/app/config/*_dev_*.yml
 /docroot/
 /output_*/
 /sass/.sass-cache/

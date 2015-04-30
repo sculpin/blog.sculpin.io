@@ -16,8 +16,10 @@
     {% if page.social_image %}
         <meta property="og:image" content="{{ site.url }}{{ page.social_image }}" />
     {% endif %}
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ page.blocks.content|raw|striptags|split(' ')|slice(0,50)|join(' ') }} ...{% endif %}" />
+    <meta property="article:author" content="https://www.facebook.com/simensen" />
+    <meta property="article:publisher" content="https://www.facebook.com/getsculpin" />
 
     <!-- Twitter -->
     {% if page.social_image %}
