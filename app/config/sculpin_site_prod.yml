@@ -2,4 +2,4 @@ imports:
     - sculpin_site.yml
 google_analytics_tracking_id: UA-59664411-1
 disqus_shortname: sculpinblog
-url: http://blog.sculpin.io
+url: https://blog.sculpin.io
