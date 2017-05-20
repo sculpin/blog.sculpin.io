@@ -1,12 +1,11 @@
 ---
-title: Beau Simensen
+title: Chris Tankersley
 use:
     - posts
 tags:
-    - that podcast
-    - thatpodcast
-    - dflydev
-excerpt: "Beau has developed software since 1998 and created Sculpin. He owns dflydev and is co-host of That Podcast. Beau is a proponent of framework agnostic code. Unglue all the things!"
+    - jerks talk games
+
+excerpt: "Chris is a jack-of-all trades developer and system admin. He is the current maintainer of Sculpin, host of Jerks Talk Games, speaker, author, PHP FIG core member, and general hanger-on in the PHP community."
 ---
 {% extends "base" %}
 {% block meta %}
@@ -16,7 +15,7 @@ excerpt: "Beau has developed software since 1998 and created Sculpin. He owns df
     <!-- Facebook -->
     <meta property="og:title" content="Sculpin's Blog author {{ page.title }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="{{ site.url }}/assets/images/authors/beau-600x600.jpg" />
+    <meta property="og:image" content="{{ site.url }}/assets/images/authors/chris-600x600.jpg" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
     <meta property="og:description" content="{{ page.excerpt }}" />
 
@@ -24,29 +23,26 @@ excerpt: "Beau has developed software since 1998 and created Sculpin. He owns df
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Sculpin's Blog author {{ page.title }}" />
     <meta name="twitter:description" content="{{ page.excerpt }}" />
-    <meta name="twitter:image" content="{{ site.url }}/assets/images/authors/beau-600x600.jpg" />
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/authors/chris-600x600.jpg" />
     <meta name="twitter:site" content="@getsculpin" />
 {% endblock %}
 {% block content %}
     <header>
-        <h1>Beau Simensen</h1>
+        <h1>Chris Tankersley</h1>
         <p>
-            Beau Simensen (<a href="https://twitter.com/beausimensen">@beausimensen</a>, <a href="https://beau.io">beau.io</a>) has been a professional polyglot programmer since 1998. He owns dflydev (<a href="http://dflydev.com">dflydev.com</a>), a consulting company, and is co-host of That Podcast (<a href="https://twitter.com/thatpodcast">@thatpodcast</a>, <a href="http://thatpodcast.io">thatpodcast.io</a>).
+            Chris Tankersley (<a href="https://twitter.com/dragonmantank">@dragonmantank</a>, <a href="https://ctankersley.com">ctankersley.com</a>) is a self described "jack of all trades". He has worked with a variety of languages including PHP, C#, Python, Javascript, COBOL, and RPG. He is the co-host of <a href="https://jerkstalkgames.com">Jerks Talk Games</a>, author of <a href="https://leanpub.com/dockerfordevs">"Docker for Developers"</a>, and <a href="https://joind.in/user/dragonmantank">speaker</a>. 
         </p>
         <p>
-            An active open-sourcer, Beau created Sculpin (<a href="https://sculpin.io">sculpin.io</a>) and helped create Stack PHP (<a href="http://stackphp.com">stackphp.com</a>). He is also the Sculpin representative to the PHP Framework Interoperability Group (PHP-FIG).
-        </p>
-        <p>
-            Beau is a proponent of framework agnostic code. Unglue all the things!
+            Chris is the current lead maintainer of Sculpin (<a href="https://sculpin.io">sculpin.io</a>). He helps also maintain the <a href="https://php-mentoring.org">PHP Mentoring website</a> as well as the <a href="https://github.com/mtdowling/cron-expression">mtdowling/cron-expression</a> PHP library. Chris has also created a Wordpress to Sculpin convert called <a href="https://github.com/dragonmantank/fillet">Fillet</a>.
         </p>
     </header>
 
     <br>
 
-    <h1>Posts Written by Beau</h1>
+    <h1>Posts Written by Chris</h1>
     {% set year = '0' %}
     {% for post in data.posts %}
-        {% if post.author.shortname == "beau" %}
+        {% if post.author.shortname == "chris" %}
         <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" role="article">
             <div class="article-item">
                 <header class="post-header">
@@ -67,7 +63,7 @@ excerpt: "Beau has developed software since 1998 and created Sculpin. He owns df
                 </header>
                 <div class="post-meta">
                     <div class="post-meta-text">
-                        <span class="by">By</span> <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="{{ site.url }}/authors/beau">Beau Simensen</a>
+                        <span class="by">By</span> <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="{{ site.url }}/authors/{{post.author.shortname}}">{{post.author.name}}</a>
                         <span class="on">
                             on
                             <time datetime="{{ post.date|date('c') }}" pubdate>

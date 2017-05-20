@@ -2,7 +2,11 @@
 title: "What is in a name?"
 social_image: /assets/images/posts/2015-03-09-social.png
 excerpt: "The story of how Sculpin got its name and how it ended up with a fish for its mascot."
-
+author:
+  shortname: beau
+  name: Beau Simensen
+  twitter: beausimensen
+  facebook: simensen
 ---
 
 [![]({{site.url}}/assets/images/posts/2015-03-09-sturgeon-poacher-by-beryllium.jpg)](https://www.flickr.com/photos/beryllium/6917782491/)<br>

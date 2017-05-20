@@ -1,6 +1,10 @@
 ---
 title: "Deprecating Phar Distribution and Embedded Composer"
-
+author:
+  shortname: beau
+  name: Beau Simensen
+  twitter: beausimensen
+  facebook: simensen
 ---
 
 If you are currently using a globally installed phar distribution for Sculpin you should migrate to a per-project Composer installed version of Sculpin as soon as you can.

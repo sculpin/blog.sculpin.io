@@ -1,7 +1,11 @@
 ---
 title: The Sculpin Roadmap for 2015
 social_image: /assets/images/posts/2015-03-02-social.png
-
+author:
+  shortname: beau
+  name: Beau Simensen
+  twitter: beausimensen
+  facebook: simensen
 ---
 
 I have big plans for Sculpin in 2015. I'm throwing them out here now both so the community can be aware of what to expect in 2015 but also for a little bit of accountability from the community.

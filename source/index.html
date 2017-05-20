@@ -54,7 +54,7 @@ use:
                 </header>
                 <div class="post-meta">
                     <div class="post-meta-text">
-                        <span class="by">By</span> <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="{{ site.url }}/authors/beau">Beau Simensen</a>
+                        <span class="by">By</span> <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="{{ site.url }}/authors/{{post.author.shortname}}">{{post.author.name}}</a>
                         <span class="on">
                             on
                             <time datetime="{{ post.date|date('c') }}" pubdate>

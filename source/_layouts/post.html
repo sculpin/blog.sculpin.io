@@ -2,7 +2,7 @@
 {% block styles %}
 <style>
 .post .post-meta .author-image {
-    background-image: url({{ site.url }}/assets/images/authors/beau-100x100.jpg);
+    background-image: url({{ site.url }}/assets/images/authors/{{page.author.shortname}}-100x100.jpg);
 }
 </style>
 {% endblock %}
@@ -18,7 +18,7 @@
     {% endif %}
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ page.blocks.content|raw|striptags|split(' ')|slice(0,50)|join(' ') }} ...{% endif %}" />
-    <meta property="article:author" content="https://www.facebook.com/simensen" />
+    <meta property="article:author" content="https://www.facebook.com/{{ page.author.facebook }}" />
     <meta property="article:publisher" content="https://www.facebook.com/getsculpin" />
 
     <!-- Twitter -->
@@ -33,7 +33,7 @@
     {% endif %}
     <meta name="twitter:title" content="{{ page.title }}" />
     <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ page.blocks.content|raw|striptags|split(' ')|slice(0,50)|join(' ') }} ...{% endif %}" />
-    <meta name="twitter:creator" content="@beausimensen" />
+    <meta name="twitter:creator" content="@{{ page.author.twitter }}" />
     <meta name="twitter:site" content="@getsculpin" />
 {% endblock %}
 {% block content_wrapper %}
@@ -45,7 +45,7 @@
             <h1 class="post-title">{{ page.title }}</h1>
             <div class="post-meta-text">
                 <span class="author-image">Author Image</span>
-                <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="{{ site.url }}/authors/beau">Beau Simensen</a>
+                <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="{{ site.url }}/authors/{{page.author.shortname}}">{{ page.author.name }}</a>
                 on
                 <time datetime="{{ page.date|date('c') }}" pubdate>
                     <span class='month'>{{ page.date|date('M') }}</span> <span class='day'>{{ page.date|date('jS') }}</span> <span class='year'>{{ page.date|date('Y') }}</span>

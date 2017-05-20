@@ -1,6 +1,10 @@
 ---
 title: "Meet the New Members of the Sculpin Organization"
-
+author:
+  shortname: beau
+  name: Beau Simensen
+  twitter: beausimensen
+  facebook: simensen
 ---
 
 [Sculpin](https://sculpin.io) has been in [on-again off-again](http://srcmvn.com/blog/2012/12/04/an-update-on-sculpin/) development [since December of 2011](http://srcmvn.com/blog/2012/02/19/something-new/). In that time, Sculpin has seen two major versions (only one of which ever saw any real use) and it has seen its user base increase by an incredible (but not-yet-quantified) amount.
