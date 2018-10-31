@@ -1,0 +1,87 @@
+---
+title: Kevin Boyd
+use:
+    - posts
+tags: []
+
+excerpt: "Kevin is a Senior Software Developer and Team Tech Lead at SmugMug. When not programming or making puns, he can often be found taking photographs, fishing, hanging out with his two kids, or some combination thereof."
+---
+{% extends "base" %}
+{% block meta %}
+    <meta name="description" content="{{ page.excerpt }}">
+    <meta name="keywords" content="sculpin, {% for tag in page.tags %}{% if loop.first %}, {% endif %}{{ tag }}{% if not loop.last %}, {% endif %}{% endfor %}" />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Sculpin's Blog author {{ page.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ site.url }}/assets/images/authors/kevin-600x600.jpg" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}/" />
+    <meta property="og:description" content="{{ page.excerpt }}" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sculpin's Blog author {{ page.title }}" />
+    <meta name="twitter:description" content="{{ page.excerpt }}" />
+    <meta name="twitter:image" content="{{ site.url }}/assets/images/authors/kevin-600x600.jpg" />
+    <meta name="twitter:site" content="@getsculpin" />
+{% endblock %}
+{% block content %}
+    <header>
+        <h1>Kevin Boyd</h1>
+        <p>
+            Kevin is a Senior Software Developer and Team Tech Lead at SmugMug. When not programming or making puns, he can often be found taking photographs, fishing, hanging out with his two kids, or some combination thereof.
+        </p>
+        <p>
+            Kevin's current projects include WhateverthingNamr, Deref.Link, SlackerTalk, GrubThing, and an ever-growing list of other hobbies.
+        </p>
+<p>His photography can be found at <a href="https://www.kevinboyd.ca/">KevinBoyd.ca</a> and on <a href="https://flickr.com/photos/beryllium">Flickr</a>.
+    </header>
+
+    <br>
+
+    <h1>Posts Written by Kevin</h1>
+    {% set year = '0' %}
+    {% for post in data.posts %}
+        {% if post.author.shortname == "kevin" %}
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting" role="article">
+            <div class="article-item">
+                <header class="post-header">
+                    {% set this_year %}{{ post.date | date("Y") }}{% endset %}
+                    {% if year != this_year %}
+                        {% set month = '0' %}
+                        {% set year = this_year %}
+                        <span class="year-group">{{ year }}</span>
+                    {% endif %}
+                    <h2 class="post-title" itemprop="name">
+                        <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
+                        <small>
+                            <time datetime="{{ post.date|date('c') }}" pubdate>
+                                <span class='month'>{{ post.date|date('M') }}</span> <span class='day'>{{ post.date|date('jS') }}</span> <span class='year'>{{ post.date|date('Y') }}</span>
+                            </time>
+                        </small>
+                    </h2>
+                </header>
+                <div class="post-meta">
+                    <div class="post-meta-text">
+                        <span class="by">By</span> <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="{{ site.url }}/authors/{{post.author.shortname}}">{{post.author.name}}</a>
+                        <span class="on">
+                            on
+                            <time datetime="{{ post.date|date('c') }}" pubdate>
+                                <span class='month'>{{ post.date|date('M') }}</span> <span class='day'>{{ post.date|date('jS') }}</span> <span class='year'>{{ post.date|date('Y') }}</span>
+                            </time>
+                        </span>
+
+                        {%- if post.tags -%}
+                            <div>
+                                Tagged
+                                {% for tag in post.tags %}
+                                    <a class="tag" href="{{ site.url }}/{{ post.tag_html_index_permalinks[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                                </div>
+                        {%- endif -%}
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endif %}
+    {% endfor %}{% endblock %}
