@@ -4,7 +4,10 @@ use:
     - posts
 tags: []
 
-excerpt: "Kevin is a Senior Software Developer and Team Tech Lead at SmugMug. When not programming or making puns, he can often be found taking photographs, fishing, hanging out with his two kids, or some combination thereof."
+excerpt: >
+    When not programming or making puns, Kevin can often be found taking
+    photographs, fishing, hanging out with his two sons, or some combination of the
+    above.
 ---
 {% extends "base" %}
 {% block meta %}
@@ -29,10 +32,10 @@ excerpt: "Kevin is a Senior Software Developer and Team Tech Lead at SmugMug. Wh
     <header>
         <h1>Kevin Boyd</h1>
         <p>
-            Kevin is a Senior Software Developer and Team Tech Lead at SmugMug. When not programming or making puns, he can often be found taking photographs, fishing, hanging out with his two kids, or some combination thereof.
+            {{ page.excerpt }}
         </p>
         <p>
-            Kevin's current projects include WhateverthingNamr, Deref.Link, SlackerTalk, GrubThing, and an ever-growing list of other hobbies.
+            Kevin's current projects include Whateverthing, Namr, Deref.Link, SlackerTalk, GrubThing, and an ever-growing list of hobbies.
         </p>
 <p>His photography can be found at <a href="https://www.kevinboyd.ca/">KevinBoyd.ca</a> and on <a href="https://flickr.com/photos/beryllium">Flickr</a>.
     </header>
