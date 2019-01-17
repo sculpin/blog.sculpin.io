@@ -1,5 +1,13 @@
 {
     "require": {
         "sculpin/sculpin": "dev-master"
+    },
+    "scripts": {
+        "css": [
+            "sassc sass/screen.scss source/assets/css/screen.css"
+        ],
+        "sculpin:server": [
+            "vendor/bin/sculpin generate --watch --server"
+        ]
     }
 }

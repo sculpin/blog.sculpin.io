@@ -9,6 +9,9 @@ $darkBase: #506E79;
 $mediumBase: #7092a1;
 $lightBase: #B1C4CB;
 
+$codeBg: #eee;
+$codeFg: #770000;
+
 * {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -256,6 +259,18 @@ span.caption {
 
 			&:first-of-type {
 				padding-top: 1.4em;
+			}
+		}
+
+		ul {
+			margin-top: 0;
+			line-height: 1.5em;
+			font-size: 1.1em;
+
+			code {
+				background-color: $codeBg;
+				color: $codeFg;
+				padding: 1px 2px 1px 2px;
 			}
 		}
 
