@@ -1,0 +1,418 @@
+@charset "UTF-8";
+/*
+$lightBase: #b3b3b1;
+$mediumBase: #888;
+$darkBase: #333;
+*/
+/*$mediumBase: #547989;*/
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+a {
+  color: #7092a1; }
+  a:hover {
+    color: #506E79; }
+
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px; }
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%; }
+
+body {
+  font-family: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-feature-settings: "liga=1, dlig=1";
+  -ms-font-feature-settings: "liga", "dlig";
+  -webkit-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig"; }
+
+span.caption {
+  color: #B1C4CB;
+  font-style: italic;
+  font-size: .75em; }
+  span.caption a {
+    color: inherit; }
+
+.content article:last-of-type .article-item {
+  border: 0; }
+
+.content article .article-item {
+  width: 100%;
+  font-family: Linux Libertine;
+  color: #506E79;
+  padding: 1.1em 0;
+  border-bottom: 1px solid rgba(80, 110, 121, 0.0625); }
+  .content article .article-item .post-header {
+    position: relative;
+    line-height: 2.125em;
+    vertical-align: baseline;
+    color: #B1C4CB;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: .875em; }
+    .content article .article-item .post-header .year-group {
+      display: none; }
+    .content article .article-item .post-header small {
+      display: none; }
+    .content article .article-item .post-header .author-image {
+      background-color: transparent;
+      border: 0;
+      overflow: hidden;
+      /* IE 6/7 fallback */
+      *text-indent: -9999px;
+      vertical-align: middle;
+      display: inline-block;
+      width: 2.125em;
+      height: 2.125em;
+      border-radius: 100%;
+      background-size: cover; }
+      .content article .article-item .post-header .author-image:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 150%; }
+    .content article .article-item .post-header .author-name {
+      font-weight: bold; }
+    .content article .article-item .post-header .post-title {
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: -0.04em;
+      font-size: 1.25em;
+      line-height: 1.1;
+      color: #506E79;
+      margin-bottom: .375em;
+      margin: 0; }
+      .content article .article-item .post-header .post-title a {
+        text-decoration: none;
+        color: #506E79; }
+  .content article .article-item .post-meta-text {
+    line-height: 1.5em;
+    margin-top: .5em; }
+  .content article .article-item .post-excerpt p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.375em;
+    line-height: 1.4em;
+    margin: 0;
+    padding: .75em 0; }
+  .content article .article-item .by {
+    display: none; }
+  .content article .article-item .on {
+    display: inline; }
+
+.content .post .post-meta .post-reading {
+  display: none;
+  position: absolute;
+  top: 1em;
+  right: .5em;
+  border-radius: 2em;
+  font-family: 'Open Sans', MundoSans, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  padding: .5em .75em;
+  color: rgba(80, 110, 121, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: .875em; }
+.content .post .post-meta-text {
+  line-height: 2.125em;
+  vertical-align: baseline;
+  color: #B1C4CB;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-style: normal;
+  font-family: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: .875em; }
+  .content .post .post-meta-text .author-image {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 2.125em;
+    height: 2.125em;
+    border-radius: 100%;
+    background-size: cover;
+    margin-right: .25em; }
+    .content .post .post-meta-text .author-image:before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 150%; }
+  .content .post .post-meta-text .author-name {
+    font-weight: bold; }
+  .content .post .post-meta-text a {
+    color: inherit;
+    text-decoration: none; }
+  .content .post .post-meta-text .tags {
+    display: none; }
+.content .post .post-title {
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.04em;
+  font-size: 1.5em;
+  line-height: 1.1;
+  color: #506E79;
+  margin-bottom: .375em; }
+.content .post footer.post-footer {
+  border-top: 1px solid #B1C4CB; }
+.content .post .post-content, .content .post footer.post-footer {
+  width: 100%;
+  font-family: Linux Libertine;
+  color: #506E79; }
+  .content .post .post-content p, .content .post footer.post-footer p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.375em;
+    line-height: 1.4em;
+    margin: 0;
+    padding-bottom: 1.4em; }
+    .content .post .post-content p:first-of-type, .content .post footer.post-footer p:first-of-type {
+      padding-top: 1.4em; }
+  .content .post .post-content > pre, .content .post footer.post-footer > pre {
+    padding: 0 0 2.8em; }
+    .content .post .post-content > pre > code, .content .post footer.post-footer > pre > code {
+      padding: 1em; }
+  .content .post .post-content hr, .content .post footer.post-footer hr {
+    margin-bottom: 2.8em;
+    border: 0;
+    height: 1px;
+    background-color: #B1C4CB;
+    opacity: .25; }
+  .content .post .post-content blockquote, .content .post footer.post-footer blockquote {
+    padding-left: 1.4em;
+    margin-left: -1.4em;
+    border-left: 0.7em solid #B1C4CB; }
+    .content .post .post-content blockquote p, .content .post footer.post-footer blockquote p {
+      font-style: italic; }
+      .content .post .post-content blockquote p:first-of-type, .content .post footer.post-footer blockquote p:first-of-type {
+        padding-top: .7em; }
+      .content .post .post-content blockquote p:last-of-type, .content .post footer.post-footer blockquote p:last-of-type {
+        padding-bottom: .7em; }
+  .content .post .post-content h2 a, .content .post footer.post-footer h2 a {
+    text-decoration: none;
+    color: #506E79; }
+    .content .post .post-content h2 a:after, .content .post footer.post-footer h2 a:after {
+      font: normal normal normal 14px/1 FontAwesome;
+      content: " "; }
+  .content .post .post-content .tags, .content .post footer.post-footer .tags {
+    color: #B1C4CB; }
+    .content .post .post-content .tags a, .content .post footer.post-footer .tags a {
+      color: inherit;
+      text-decoration: none; }
+.content .post .share {
+  color: #506E79;
+  vertical-align: middle; }
+  .content .post .share span {
+    display: inline-block;
+    vertical-align: middle; }
+  .content .post .share a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 1.5em; }
+  .content .post .share .hidden {
+    display: none; }
+
+main[role="main"] {
+  margin: 5em auto 0;
+  max-width: 700px;
+  padding: 0; }
+  main[role="main"] > header {
+    margin-bottom: 1em; }
+    main[role="main"] > header h1 {
+      color: #506E79;
+      margin-bottom: 0; }
+      main[role="main"] > header h1 small {
+        color: #B1C4CB;
+        font-size: .5em;
+        letter-spacing: -0.02em;
+        font-weight: 400;
+        font-style: normal; }
+    main[role="main"] > header p {
+      font-size: .875em;
+      margin-top: 0;
+      color: #7092a1;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+      font-style: normal; }
+  main[role="main"] .content-footer {
+    margin: 2em 0;
+    color: #B1C4CB; }
+    main[role="main"] .content-footer a {
+      color: #B1C4CB;
+      text-decoration: none; }
+  main[role="main"] .post-content p, main[role="main"] .post-content p > code {
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  main[role="main"] .post-content pre code {
+    overflow-x: scroll; }
+  main[role="main"] .post-content p img {
+    max-width: 100%;
+    height: auto; }
+  main[role="main"] .ck_form {
+    max-width: 100%;
+    margin: 1.4em 0 1.4em; }
+
+.logo-readium-container {
+  position: fixed;
+  left: 0;
+  top: .5em;
+  z-index: 99;
+  /*
+  background-color: rgba(255,255,255,.90);
+  border-top-right-radius: 1.25em;
+  border-bottom-right-radius: 1.25em;
+  border: 2px solid $darkBase;
+  border-left: none;
+  */
+  height: 2.75em;
+  vertical-align: middle;
+  color: black; }
+  .logo-readium-container .logo-readium {
+    margin-left: .25em;
+    position: relative;
+    width: 1.25em;
+    height: 1.25em;
+    background-color: #7092a1;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 2em;
+    color: white;
+    padding: .125em 0 0 0;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden; }
+  .logo-readium-container .logo-readium:hover {
+    background-color: #506E79; }
+  .logo-readium-container a:not(.logo-readium) {
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1.5em;
+    margin: .5em 0;
+    overflow: hidden;
+    padding: 0 .5em 0 .25em;
+    text-decoration: none;
+    color: #7092a1;
+    border-right: 1px solid #B1C4CB; }
+    .logo-readium-container a:not(.logo-readium):last-of-type {
+      padding-right: 1em;
+      border-right: none; }
+    .logo-readium-container a:not(.logo-readium) i {
+      display: none; }
+    .logo-readium-container a:not(.logo-readium):hover {
+      color: #506E79; }
+      .logo-readium-container a:not(.logo-readium):hover i {
+        display: block;
+        position: absolute;
+        right: .625em;
+        top: .5em;
+        font-size: .5em;
+        color: #B1C4CB; }
+
+@media only screen and (min-width: 640px) {
+  main[role="main"] > header {
+    font-size: 1.5em; }
+    main[role="main"] > header p {
+      font-size: .75em; }
+
+  .content article .article-item .post-header h2.post-title {
+    font-size: 2em; }
+
+  .content .post .post-title {
+    font-size: 2em; } }
+@media only screen and (min-width: 640px) and (orientation: landscape) {
+  main[role="main"] {
+    margin-top: 7em; } }
+/*
+	> header {
+		font-size: 2em;
+
+		h1 {
+			margin-bottom: 0;
+		}
+
+		p {
+			margin-top: 0;
+			font-size: .75em;
+
+			color: #b3b3b1;
+			letter-spacing: -0.02em;
+			font-weight: 400;
+			font-style: normal;
+
+		}
+
+	}*/
+@media only screen and (min-width: 1024px) {
+  main[role="main"] > header {
+    font-size: 2em; }
+    main[role="main"] > header p {
+      font-size: .625em; }
+
+  .content article .article-item .post-header {
+    position: relative;
+    /*
+    .year-group {
+    	font-size: 2em;
+    	position: absolute;
+    	display: block;
+    	left: 0;
+    	margin-left: -5.5em;
+    	width: 2.5em;
+    }
+    */ }
+    .content article .article-item .post-header .year-group {
+      font-size: 1em;
+      position: absolute;
+      display: block;
+      left: 0;
+      margin-left: -8em;
+      width: 2em;
+      padding-top: .5em; }
+    .content article .article-item .post-header h2.post-title {
+      font-size: 2em; }
+    .content article .article-item .post-header small {
+      color: #B1C4CB;
+      letter-spacing: -0.02em;
+      font-weight: 400;
+      font-style: normal;
+      font-size: .5em;
+      line-height: 1em;
+      vertical-align: bottom;
+      display: inline;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4em;
+      text-align: right;
+      margin-left: -5em;
+      padding: 1em 0 0; }
+      .content article .article-item .post-header small time .year {
+        display: none; }
+  .content article .article-item .by {
+    display: inline; }
+  .content article .article-item .on {
+    display: none; }
+
+  .content .post .post-title {
+    font-size: 3.125em; }
+  .content .post .post-meta-text .tags {
+    display: inline; } }
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  main[role="main"] {
+    margin-top: 10em; } }
