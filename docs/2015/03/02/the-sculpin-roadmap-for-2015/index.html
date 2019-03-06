@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <title>The Sculpin Roadmap for 2015 &middot; Sculpin's Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="https://blog.sculpin.io/2015/03/02/the-sculpin-roadmap-for-2015" />
+        <meta name="description" content="I have big plans for Sculpin in 2015. I&#039;m throwing them out here now both so the community can be aware of what to expect in 2015 but also for a little bit of accountability from the community.
+
+With the support of the new members of the Sculpin organization, it should ...">
+    <meta name="keywords" content="sculpin, " />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="The Sculpin Roadmap for 2015" />
+    <meta property="og:type" content="article" />
+            <meta property="og:image" content="https://blog.sculpin.io/assets/images/posts/2015-03-02-social.png" />
+        <meta property="og:url" content="https://blog.sculpin.io/2015/03/02/the-sculpin-roadmap-for-2015" />
+    <meta property="og:description" content="I have big plans for Sculpin in 2015. I&#039;m throwing them out here now both so the community can be aware of what to expect in 2015 but also for a little bit of accountability from the community.
+
+With the support of the new members of the Sculpin organization, it should ..." />
+    <meta property="article:author" content="https://www.facebook.com/simensen" />
+    <meta property="article:publisher" content="https://www.facebook.com/getsculpin" />
+
+    <!-- Twitter -->
+            <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image:src" content="https://blog.sculpin.io/assets/images/posts/2015-03-02-social.png">
+        <meta name="twitter:title" content="The Sculpin Roadmap for 2015" />
+    <meta name="twitter:description" content="I have big plans for Sculpin in 2015. I&#039;m throwing them out here now both so the community can be aware of what to expect in 2015 but also for a little bit of accountability from the community.
+
+With the support of the new members of the Sculpin organization, it should ..." />
+    <meta name="twitter:creator" content="@beausimensen" />
+    <meta name="twitter:site" content="@getsculpin" />
+
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
+    <link href="https://blog.sculpin.io/assets/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://blog.sculpin.io/atom.xml" rel="alternate" title="#ossart" type="application/atom+xml">
+
+    <link rel="stylesheet" href="https://blog.sculpin.io/assets/css/screen.css?ab=10">
+    <link rel="stylesheet" href="https://blog.sculpin.io/assets/js/highlight/styles/github.css">
+    <script src="https://blog.sculpin.io/assets/js/modernizr.min.js"></script>
+     <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+.post .post-meta .author-image {
+    background-image: url(https://blog.sculpin.io/assets/images/authors/beau-100x100.jpg);
+}
+</style>
+</head>
+<body >
+    <div class="logo-readium-container">
+        <a href="https://blog.sculpin.io/" class="logo-readium fa fa-home"></a>
+        <!--<a href="https://blog.sculpin.io/">blog</a>-->
+        <!--<a href="https://sculpin.io">sculpin.io <i class="fa fa-external-link"></i></a>-->
+    </div>
+    <main class="content" role="main">
+            <article class="post">
+        <div class="post-meta">
+            <div class="post-reading">
+                <span class="post-reading-time"></span> read
+            </div>
+            <h1 class="post-title">The Sculpin Roadmap for 2015</h1>
+            <div class="post-meta-text">
+                <span class="author-image">Author Image</span>
+                <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="https://blog.sculpin.io/authors/beau">Beau Simensen</a>
+                on
+                <time datetime="2015-03-02T00:00:00-08:00" pubdate>
+                    <span class='month'>Mar</span> <span class='day'>2nd</span> <span class='year'>2015</span>
+                </time>
+            </div>
+        </div>
+        <section class="post-content">
+                        <p>I have big plans for Sculpin in 2015. I'm throwing them out here now both so the community can be aware of what to expect in 2015 but also for a little bit of accountability from the community.</p>
+
+<p>With the support of <a href="https://blog.sculpin.io/2015/02/23/meet-the-new-members-of-the-sculpin-organization/">the new members of the Sculpin organization</a>, it should be <strong>a lot</strong> easier!</p>
+
+<h2 id="sculpin-3">Sculpin 3</h2>
+
+<p>A stable release of Sculpin 3 will be available by the end of the year. This is an ambitious goal driven by several factors, mostly revolving around changing dependencies (and associated API changes) and changes being made directly to Sculpin's API.</p>
+
+<h2 id="symfony-3">Symfony 3</h2>
+
+<p>Symfony 3 is <a href="http://symfony.com/blog/symfony-3-0-the-roadmap">currently scheduled to be released by November of 2015</a>. I'd like <code>master</code> to start tracking Symfony 3 as soon as possible. The earlier we start testing out any changes to how Kernel or Bundles behave the better chances we have at influencing some decisions on how Symfony 3 will work.</p>
+
+<p>On the technical side, Sculpin is implemented as an application built around a Symfony Kernel. In Symfony 2, there was an assumption made that Kernel applications were by default going to be HTTP based. This was very much <em>not</em> the case for Sculpin. As such, we've had to make a lot of design tradeoffs to account for this.</p>
+
+<p>While the tradeoffs were mostly just in unneeded dependencies, the application as a whole would make more sense if we could leverage a Kernel without the constraints or implications that it has anything at all to do with HTTP. <a href="https://github.com/symfony/symfony/issues/9406#issuecomment-27389672">It didn't look like Symfony 3 was going to make these changes</a> but it <em>does</em> sound like Symfony 3 will be more split which could help clean things up a bit more. What this will look like is still a bit unclear to me.</p>
+
+<p>This may have major implications on the API and structure of how Sculpin is built. If the Bundle system changes a lot this will require reworking almost all of Sculpin's internal wiring. And depending on any Symfony 2.x backward compatibility layer being available, it may result in major changes to anyone else who has built extensions (or used third-party extensions) that were written for Sculpin.</p>
+
+<p>I've also considered abandoning Symfony Kernel as Sculpin 3's core if it turns out to be more trouble than it is worth. There have been huge advantages to using Kernel (didn't have to write my own bundle/extension layer) but it has come at a big cost. Symfony bundles are a barrier to entry for many people and if Kernel truly is <a href="https://github.com/symfony/symfony/issues/9406#issuecomment-27389672"><em>never</em></a> going to be usable outside of HTTP Kernel it might be best to rip the band-aid off sooner rather than later.</p>
+
+<p>This could potentially be a big deal, so I'd like to get feedback on who is actively working with Sculpin-specific extensions or using any generic Symfony 2 bundles so that I can get a better idea what kind of impact this will have on the community.</p>
+
+<p>Nothing has been decided yet, but this is looking to be the biggest change coming to Sculpin.</p>
+
+<h2 id="minimum-supported-php-version">Minimum Supported PHP Version</h2>
+
+<p>With Sculpin 3 the minimum supported PHP version will be bumped to PHP 7 <em>if there is a stable PHP 7 release available by the end of the year</em>. We'll be keeping an eye on the development of PHP 7 to see whether it will actually be ready in time to launch Sculpin 3 with support for PHP 7.</p>
+
+<p>This is a major change over the previously supported PHP 5.3.2. Even now I'm only running PHP 5.5 on my local development environments so this will be huge for me as well.</p>
+
+<p>Sculpin 2 will continue to work with PHP 5.3.2+ so people who are unable or unwilling to upgrade to PHP 7 will still be able to use Sculpin. However, I'd love to be able to help keep the PHP community moving toward using current and supported versions of PHP. As already hinted at, in the past I've been pretty horrible about this myself. Time to change that.</p>
+
+<h2 id="markdown%2C-markdown%2C-markdown">Markdown, Markdown, Markdown</h2>
+
+<p>I have long had my eyes on replacing php/markdown with <a href="https://github.com/kzykhys/Ciconia">Ciconia</a>. However, I'm no longer certain that Ciconia is going to be the best choice. Or more accurately, the <em>only other best</em> choice. As <a href="https://twitter.com/philsturgeon">Phil Sturgeon</a> has <a href="https://philsturgeon.uk/markdown/2014/11/30/state-of-markdown/">written about extensively</a>, there are many, many options when it comes to Markdown.</p>
+
+<p>Some work has already been contributed to make it so that you can provide other Markdown implementations for Sculpin. However, I'd like to revisit this and see if there are other solutions that may work better.</p>
+
+<p>There are many Markdown dialects available for PHP now so it is becoming more and more important for users of Sculpin to be able to choose the flavor that works for them.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>The documentation for Sculpin has been a sore spot for me for quite some time. There is just enough information in the docs currently to get you in trouble. They need to be revamped in a big way so that they are more useful, for more people, more often.</p>
+
+<p>Fortunately, Emma Jane is on the case. Helping to come up with a brand new set of documentation from the ground up will be one of her special projects this year. We'll let you know when we have more details so that if you have suggestions or requests for the documentation we can take them into consideration!</p>
+
+<h2 id="themes">Themes</h2>
+
+<p>This year we will make themes a first class citizen of Sculpin. There are a few lingering questions about how certain things should be handled but most of those questions are answered. The answer, however, was, "we have a lot of work to do."</p>
+
+<p><strong>If you are currently working with the [WIP] theme support for Sculpin, know that there may be major changes to the theme system over the next year.</strong></p>
+
+<h2 id="testing">Testing</h2>
+
+<p>I am sad to say that Sculpin is far from my most tested piece of software. A little has been done here or there but for the most part Sculpin is manually tested by users everywhere.</p>
+
+<p>This situation will change this year. New features and bug fixes will start to be accompanied by tests to start fleshing out Sculpin's test suite.</p>
+
+<h2 id="backwards-compatibility-concerns">Backwards Compatibility Concerns</h2>
+
+<h3 id="sculpin-site-layout">Sculpin Site Layout</h3>
+
+<p>I'm going to aim for keeping the basic site layout 100% backward compatible with Sculpin 2. This <em>may not</em> extend to configuration (more on that later) but it should be a high priority for us that a site that renders with Sculpin 2 can render with Sculpin 3 out of the box.</p>
+
+<p>For those of you that had to migrate (sometimes painfully) from another platform like Jekyll, I don't want to make you go through that again. At least not with your content. :)</p>
+
+<p><strong>The goal is for the content of your site to be rendered by Sculpin 3 without additional modification.</strong> The configuration to get your site to render the same way may change, though.</p>
+
+<h3 id="sculpin-site-configuration">Sculpin Site Configuration</h3>
+
+<p>In general I think that the Sculpin site configuration will not need to change. The <code>sculpin_site*.yml</code> files for certain should be able to stay the same. Where things are a little uncertain are with respect to the Kernel configuration.</p>
+
+<p>Whether the Kernel configuration needs to change is up to Symfony 3 and the direction they go with that. I suspect it will not change much but we won't know until we're deep into the migration.</p>
+
+<h3 id="sculpin-extensions">Sculpin Extensions</h3>
+
+<p>Depending on how radically different Symfony 3's Bundle architecture becomes it is possible that existing Sculpin extensions will no longer work in Sculpin 3. If you are building or have worked on Sculpin-specific extensions let me know in the comments so I can get a better idea what kind of impact this will have on the community.</p>
+
+<h2 id="sculpin-2-updates">Sculpin 2 Updates</h2>
+
+<p>I'm excited to see these changes roll out throughout the year. However, I want to try and avoid confusion while things will be changing at a fast pace on <code>master</code>.</p>
+
+<p>Some of the new features or bug fixes might want to make their way to Sculpin 2. We'll have to take them on a case-by-case basis.</p>
+
+<p>For the foreseeable future Sculpin 2 will be what will be delivered as <code>sculpin.phar</code> to new users. When we start building a phar for Sculpin 3 we'll announce how that will work.</p>
+
+<p>In the meantime, we're going to need to update the Sculpin build and deploy process along with the self update functionality so that if you are on Sculpin 2 <em>you stay on Sculpin 2 when you update</em>.</p>
+
+<p>We'll provide more news on any gotchas when we have a more concrete plan in place. Until then, know that it is safe to continue to get <code>sculpin.phar</code> for the time being and that you won't get any crazy Symfony 3 experimental Sculpin 3 code breaking your site.</p>
+
+<hr />
+
+<p>So, we have a lot of work ahead of us! If all goes as planned we should have a polished Sculpin 3 ready to go by the end of 2015. If you have questions, concerns, or suggestions, leave them in the comments or join us in #sculpin on freenode or Gitter #sculpin to chat with us realtime.</p>
+        </section>
+        <footer class="post-footer">
+            <p class="share">
+                <span>
+                    Share this post on
+                </span>
+                <a class="icon-twitter" target="_blank" href="http://twitter.com/share?text=The%20Sculpin%20Roadmap%20for%202015&amp;via=getsculpin&amp;source=https%3A%2F%2Fblog.sculpin.io%2F2015%2F03%2F02%2Fthe-sculpin-roadmap-for-2015">
+                    <i class="fa fa-twitter-square"></i><span class="hidden">twitter</span>
+                </a>
+
+                <a class="icon-reddit" target="_blank" href="http://reddit.com/submit?title=The%20Sculpin%20Roadmap%20for%202015&amp;url=https%3A%2F%2Fblog.sculpin.io%2F2015%2F03%2F02%2Fthe-sculpin-roadmap-for-2015/">
+                    <i class="fa fa-reddit-square"></i><span class="hidden">reddit</span>
+                </a>
+
+                <a class="icon-hacker-news" target="_blank" href="http://news.ycombinator.com/submitlink?t=The%20Sculpin%20Roadmap%20for%202015&amp;u=https%3A%2F%2Fblog.sculpin.io%2F2015%2F03%2F02%2Fthe-sculpin-roadmap-for-2015/">
+                    <i class="fa fa-hacker-news"></i><span class="hidden">hacker news</span>
+                </a>
+
+                <a class="icon-google-plus" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url=https%3A%2F%2Fblog.sculpin.io%2F2015%2F03%2F02%2Fthe-sculpin-roadmap-for-2015">
+                    <i class="fa fa-google-plus-square"></i><span class="hidden">google+</span>
+                </a>
+
+                <a class="icon-facebook" target="_blank" href="//www.facebook.com/sharer.php?t=The%20Sculpin%20Roadmap%20for%202015&amp;u=https%3A%2F%2Fblog.sculpin.io%2F2015%2F03%2F02%2Fthe-sculpin-roadmap-for-2015">
+                    <i class="fa fa-facebook-square"></i><span class="hidden">facebook</span>
+                </a>
+            </p>
+
+                    </footer>
+    </article>
+
+    <div id="disqus_thread" aria-live="polite">
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+        <footer class="content-footer">
+            &copy; 2019 <a href="http://dflydev.com/projects/sculpin/">dflydev</a>
+            &middot;
+            <a href="https://twitter.com/getsculpin" rel="publisher"><i class="fa fa-twitter-square"></i></a>
+            <a href="https://www.facebook.com/getsculpin"><i class="fa fa-facebook-square"></i></a>
+            &middot;
+            <a href="https://sculpin.io/">Sculpin powered</a>
+        </footer>
+    </main>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://blog.sculpin.io/assets/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="https://blog.sculpin.io/assets/js/readingTime.min.js"></script>
+
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=312462998877190&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        (function () {
+            var twitterWidgets = document.createElement('script');
+            twitterWidgets.type = 'text/javascript';
+            twitterWidgets.async = true;
+            twitterWidgets.src = '//platform.twitter.com/widgets.js';
+            document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+        })();
+        (function() {
+            var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+            script.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+        })();
+    </script>
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-59664411-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+        <script>
+(function ($) {
+    "use strict";
+
+    $(document).ready(function(){
+        $('.post-reading').show();
+
+        // Calculates Reading Time
+        $('.post-content').readingTime({
+            readingTimeTarget: '.post-reading-time',
+            wordCountTarget: '.post-word-count',
+        });
+    });
+
+}(jQuery));
+    </script>
+    <script type="text/javascript">
+    var disqus_shortname = 'sculpinblog';
+    var disqus_identifier = 'https://blog.sculpin.io/2015/03/02/the-sculpin-roadmap-for-2015';
+    var disqus_url = 'https://blog.sculpin.io/2015/03/02/the-sculpin-roadmap-for-2015';
+    var disqus_script = 'embed.js';
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+</body>
+</html>

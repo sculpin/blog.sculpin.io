@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title><![CDATA[Sculpin's Blog]]></title>
+    <link href="https://blog.sculpin.io/atom.xml" rel="self"/>
+    <link href="https://blog.sculpin.io/"/>
+    <updated>2019-01-17T21:08:39-08:00</updated>
+    <id>https://blog.sculpin.io/</id>
+        <generator uri="http://sculpin.io/">Sculpin</generator>
+            <entry>
+            <author>
+                <name>Beau Simensen</name>
+            </author>
+            <title type="html"><![CDATA[A New Maintainer Appears!]]></title>
+            <link href="https://blog.sculpin.io/2017/05/19/a-new-maintainer-appears"/>
+            <updated>2017-05-19T00:00:00-07:00</updated>
+            <id>https://blog.sculpin.io/2017/05/19/a-new-maintainer-appears</id>
+            <content type="html"><![CDATA[<p>Effective immediately, I have handed over full ownership of the Sculpin project to Chris Tankersley. Until otherwise specified, the rest of the <a href="https://blog.sculpin.io/2015/02/23/meet-the-new-members-of-the-sculpin-organization">Sculpin Organization</a> will remain intact.</p>
+
+<p>This was not an easy decision for me to make. I've been thinking about it for a few years now. It isn't fair to the community for my continued lack of time and energy to hold Sculpin back from moving forward.</p>
+
+<p>The hardest thing for me is that Sculpin, as it stands right now, works great for me. I maintain dozens of Sculpin sites and they've all worked great for the last two to three years.</p>
+
+<p>There are things I'd love to change but it has become clear to me that I neither have the time nor energy to make it happen.</p>
+
+<p>Thanks for your support over the years. I'm sure Chris and the team will treat you better than I have over the last few.</p>
+
+<p>Thanks.</p>
+
+<p><strong>-Beau</strong></p>
+
+<hr />
+
+<p>I am honored that Beau is allowing me to take over ownership of the Sculpin project. I have been the FIG representative for Sculpin for a few years now, making sure that Sculpin's interests are heard for new PSRs that take shape in the PHP community. Since the beginning of the year I've also represented the FIG as part of the Core Committee.</p>
+
+<p>While I may not exactly be <a href="https://github.com/sculpin/sculpin/graphs/contributors">a very heavy committer, if at all</a> to the base code so far, I have been serving on the Sculpin organization committee since 2015. I've spent much of that time extolling the virtues of Sculpin, and have helped guide what features and roadmaps we have worked on in that time.</p>
+
+<p>Sculpin has been a big part of my workflow since I started working with it, and it is one of the projects near and dear to my heart. When Beau decided to step down, it was not a hard decision to step up and help keep this project going. Sculpin is a stable, dependable static site builder, and I would hate to see it go away.</p>
+
+<p>I plan on coming up with some exciting new features for Sculpin in addition to updating the codebase. I hope you all come along for the ride.</p>
+
+<p>Thank you Beau. For Sculpin, and letting me help keep it alive.</p>
+
+<p><strong>-Chris</strong></p>
+]]></content>
+        </entry>
+            <entry>
+            <author>
+                <name>Beau Simensen</name>
+            </author>
+            <title type="html"><![CDATA[Deprecating Phar Distribution and Embedded Composer]]></title>
+            <link href="https://blog.sculpin.io/2016/08/31/deprecating-phar-distribution-and-embedded-composer"/>
+            <updated>2016-08-31T00:00:00-07:00</updated>
+            <id>https://blog.sculpin.io/2016/08/31/deprecating-phar-distribution-and-embedded-composer</id>
+            <content type="html"><![CDATA[<p>If you are currently using a globally installed phar distribution for Sculpin you should migrate to a per-project Composer installed version of Sculpin as soon as you can.</p>
+
+<p><strong>TL;DR:</strong> The most recent version of the Sculpin phar is extremely out of date, incompatible with PHP 7, and should be considered unavailable by October 1st. Upgrade your website project ASAP.</p>
+
+<hr />
+
+<p>I have been putting this post off (and a few others) for six to twelve months. However, now that I am in a place where I can blog again, this is one issue that I need to address as quickly as possible.</p>
+
+<h2 id="any-plans-for-sculpin-3-would-have-required-reworking-the-phar-build-and-distribution-process">Any plans for Sculpin 3 would have required reworking the phar build and distribution process</h2>
+
+<p>In typical programmer fashion, I let myself get bogged down in the details of eventually needing to deploy Sculpin 3 phar builds rather than working on Sculpin 3. What little time I had to spend on Sculpin last year was sunk on solving this problem.</p>
+
+<p>The build process has always been kinda hacky and, unfortunately, not kept under revision control.</p>
+
+<p>I KNOW.</p>
+
+<p>Lesson learned.</p>
+
+<p>At some point last year I started working on this new deployment pipeline for building a phar that would be "major version aware." I didn't want <code>sculpin self-update</code> to bump people from Sculpin 2 to Sculpin 3 which turned out to be a weird and complicated problem to try and solve when you don't have a lot of time to throw at a project.</p>
+
+<p>Not surprisingly, I didn't get far. After a few months of tinkering I realized I no longer had the ability to deploy a current version of the Sculpin to download.sculpin.io.</p>
+
+<p>I don't want to go into the details on this as I'm quite embarrassed even sharing this much. At some point I needed to cut my losses on this part of the project and removed the instructions for installing Sculpin as a phar.</p>
+
+<h2 id="the-last-officially-available-sculpin-phar-is-not-compatible-with-php-7">The last officially available Sculpin phar is not compatible with PHP 7</h2>
+
+<p>One of my <a href="/2015/03/02/the-sculpin-roadmap-for-2015">lofty goals for Sculpin in 2015</a> was for Sculpin 3 to support only PHP 7 out of the box.</p>
+
+<p>Yeah, Sculpin 3 didn't happen.</p>
+
+<p>To make matters worse, because Sculpin relied on Composer, and Composer relied on another library that was not compatible with PHP 7 (it had a class named <code>String</code>), this meant that you cannot run Sculpin 2 installed as a phar with PHP 7. At all.</p>
+
+<h2 id="maintaining-phar-distributions-is-hard%2C-sculpin-or-otherwise">Maintaining phar distributions is hard, Sculpin or otherwise</h2>
+
+<p>Since I started distributing a phar for Sculpin I've been feeling a slight amount of pain with upkeep on maintaining the distribution of the phar.</p>
+
+<p>It isn't awful, but it always felt hacky. Fragile.</p>
+
+<p>I originally wrote Sculpin based off of bits and pieces I pulled from Composer. The self-update stuff was nice but felt haphazard and dangerous.</p>
+
+<p>Composer's installer evolved over time but mine didn't. Trying to pull more pieces in and figuring out what changed, and how, was more work than I had time to do.</p>
+
+<p>Since then, projects like Pádraic Brady's <a href="https://github.com/padraic/phar-updater">PHAR Updater</a> have come out. Migrating to something like this would most definitely make things better but given the amount of time I've had to engage in Sculpin changes over the last year it didn't seem likely I'd get around to it.</p>
+
+<p>If you're interested in what it would take to leverage Pádraic's project in a project like Sculpin (or your own project), Matthew Weier O'Phinney has a great tutorial on <a href="https://mwop.net/blog/2015-12-14-secure-phar-automation.html">Secure PHAR Automation</a>.</p>
+
+<p>This isn't a request for someone to help, although <a href="https://twitter.com/gbtekkie">Georgiana Gligor</a> has already offered to help fix the Sculpin phar build process and distribution. If we can find a way to automate the phar distribution <em>and it makes sense to do so</em>, I'm all for it. But is it worth it?</p>
+
+<p>I guess the question comes down to who is using the phar distribution currently that do not already have Composer installed? And next, who doesn't have Composer installed and refuses to do so in order to continue using Sculpin?</p>
+
+<h2 id="composer-is-the-best-way-to-distribute-sculpin-and-support-extensions">Composer is the best way to distribute Sculpin and support extensions</h2>
+
+<p>Sculpin was created to scratch an itch, tinker with distributing software as a phar, and to play with the idea of extending software by embedding Composer in an application.</p>
+
+<p>Composer was still quite new when I got involved in the Composer project and started writing Sculpin. It wasn't clear then just how powerful Composer would become in its ability to distribute software over the following years.</p>
+
+<p>As powerful as Composer has become, the idea of <a href="https://github.com/dflydev/dflydev-embedded-composer">Embedded Composer</a> never took off. Not entirely. It is used by a handful of phar distributed projects, including Sculpin, but by and large even Sculpin users have been confused by this Embedded Composer thing.</p>
+
+<p>The main problem I was never able to solve with Embedded Composer was the problem of dependencies changing within the phar over time and  being able to reconcile those with the installed dependencies on a project-by-project basis.</p>
+
+<p>The magic of Embedded Composer is that on a project-by-project basis, an application like Sculpin could look at what the project wanted installed and resolve those dependencies against the dependencies that were already provided by the phar itself. Magic!</p>
+
+<p>The downside of this is that it is only done once, at install time. Or again later at update time. But it isn't done automatically and certainly not done at runtime every time the application is run. Adding that functionality was potentially possible, but would it be worth it?</p>
+
+<p>Imagine running <code>sculpin self-update</code> only to find out that Sculpin determined that it was no longer compatible with your project's custom extensions. Now imagine that you have to spend a bunch of time fixing your extension before you can use Sculpin again to build your site.</p>
+
+<p>Blech.</p>
+
+<p>Embedded Composer may still be useful in some cases, so I haven't decided to deprecate it entirely. But in the case of Sculpin, its time is limited.</p>
+
+<h2 id="migrating-a-phar-managed-site-to-a-composer-managed-site">Migrating a phar managed site to a Composer managed site</h2>
+
+<p>The overall problem of the phar lagging master and PHP 7 issues was discussed at length in <a href="https://github.com/sculpin/sculpin/issues/297">issue #297</a>.</p>
+
+<p>It was here that we formulated the migration path from a <code>sculpin.json</code> Sculpin phar managed site to a <code>composer.json</code> Composer managed site.</p>
+
+<pre><code>git mv sculpin.json composer.json
+composer require sculpin/sculpin:^2.1@dev
+</code></pre>
+
+<p>Until Embedded Composer is finally removed from Sculpin, you will have to also require Embedded Composer:</p>
+
+<pre><code>git mv sculpin.json composer.json
+composer require sculpin/sculpin:^2.1@dev dflydev/embedded-composer:^1.0@dev
+</code></pre>
+
+<p>You may then want to update <code>.gitignore</code> to ignore <code>/vendor/</code> instead of  <code>/.sculpin</code></p>
+
+<p>To see what it looked like to migrate the main Sculpin website to Composer managed, check out this commit: <a href="https://github.com/sculpin/sculpin.io/commit/889caa2dc0dddaf02f04d6dc99f9f45f73579f8d">sculpin/sculpin.io@889caa2</a></p>
+
+<h2 id="loose-ends">Loose Ends</h2>
+
+<p>I'm slowing clawing back more time to work on Sculpin. The first things the team is going to focus on is cleaning up some loose ends like this so that Sculpin is more or less stable and installable for everyone by way of Composer.</p>
+]]></content>
+        </entry>
+            <entry>
+            <author>
+                <name>Beau Simensen</name>
+            </author>
+            <title type="html"><![CDATA[What is in a name?]]></title>
+            <link href="https://blog.sculpin.io/2015/03/09/what-is-in-a-name"/>
+            <updated>2015-03-09T00:00:00-07:00</updated>
+            <id>https://blog.sculpin.io/2015/03/09/what-is-in-a-name</id>
+            <content type="html"><![CDATA[<p><a href="https://www.flickr.com/photos/beryllium/6917782491/"><img src="https://blog.sculpin.io/assets/images/posts/2015-03-09-sturgeon-poacher-by-beryllium.jpg" alt="" /></a><br>
+<span class="caption"><a href="https://www.flickr.com/photos/beryllium/6917782491/">bottom feeder</a> by <a href="https://twitter.com/beryllium9">@beryllium</a></span></p>
+
+<p>I have always appreciated O'Reilly's colophon describing the creature on the cover of each book. It was always my intention to have something similar for Sculpin. At long last, here is the story behind the name Sculpin and Jackson, Sculpin's mascot.</p>
+
+<hr />
+
+<p>I met Rebekah Simensen, aka <a href="http://ninjagrl.com/">ninjagrl</a>, back in 2007. I owned an art gallery in Seattle, WA, and was looking for new artists to show. She lived in Chicago and was posting her artwork to Flickr. It caught my eye so I contacted her to see about getting her work into our space.</p>
+
+<p>Fast-forward several years and she finds herself in Seattle as well. Her love for animals (and especially creatures of the sea) led her to volunteer at the <a href="http://www.seattleaquarium.org/">Seattle Aquarium</a>. In doing so, she learned so much more about the fish, birds, and other marine animals of the Pacific Northwest. And I learned a bit by osmosis.</p>
+
+<p>We were married in June of 2009 and we went to Newport Oregon for our honeymoon. For as long as I had lived in Seattle and for as many times as I had visited the Seattle Aquarium, I had never spent much time at the ocean. Nothing prepared me for exploring an actual tide pool in person.</p>
+
+<p>It was amazing. So much life. The longer I stared into each little pocket of trapped water the more life I saw. I was particularly fond of the sculpin darting around.</p>
+
+<p>When I started down the path of creating the project that would eventually be named Sculpin, I considered names and branding. I find that this exercise motivates me. Visualizing the end product helps me stay focused on goals and direction.</p>
+
+<p>I liked the mascots for projects kicked out by SensioLabs. I thought about coming up with a more functional name for my static-site generator but the pull to having something that could sport a friendly mascot was too strong. Among the ideas I came up with, Sculpin was my favorite by far. And it fell nicely in line with another idea I had been thinking about.</p>
+
+<p>I wanted to collaborate with Bec and integrate some of her work into my software projects. She painted tons of sea creatures so I thought that creating a sculpin to use as a mascot would be a great fit.</p>
+
+<p>I severely underestimated how simple it would be. The conversation went something like this:</p>
+
+<p>"Hey! Could you paint me a fish for a mascot for a project I've been thinking about? Something like that one there on your painting table?"</p>
+
+<p>"How about you just use that one?"</p>
+
+<p>Thus Jackson, a freshly painted ninjagrl original, became the official mascot for Sculpin.</p>
+
+<p><img src="https://blog.sculpin.io/assets/images/posts/2015-03-09-sculpin-wall-art.jpg" alt="" /></p>
+
+<p>Jackson doesn't look like a sculpin. Truth be told, a sculpin is not very pretty. Making something look simple and friendly but still being "distinctively a sculpin" would have been more trouble than it was worth.</p>
+
+<p>For my purposes I wanted the mascot to simply register as being a fish to make the sculpin connection. It was my hope that if someone had an idea what a sculpin was, they would just accept it. If someone had no idea what a sculpin was, they might assume it has something to do with fish if the logo was a smiling fishy.</p>
+
+<p>At the same time, I didn't want it to look too much like a fish that people would recognize. For example, if I had chosen something that looked obviously like a clownfish or a blue tang I do not think it would have worked.</p>
+
+<p><a href="http://www.palantir.net/blog/diving-sculpin-designers-holiday-fueled-adventure"><img src="https://blog.sculpin.io/assets/images/posts/2015-03-09-sculpin-are-ugly-palantir.jpg" alt="" /></a></p>
+
+<p><a href="http://www.palantir.net/blog/diving-sculpin-designers-holiday-fueled-adventure">One of the earliest blog posts on Sculpin</a>, written by <a href="http://www.palantir.net/about/team/ashley-cyborski">Ashley Cyborski</a> of <a href="http://palantir.net/">Palantir.net</a>, included a nice drawing stating, "Sculpin are UGLY but this one is GOOD."</p>
+
+<p>Seeing that post validated my thoughts on the name and choice in mascot. Choosing a simpler character was going to be better than having something that more closely resembled an actual sculpin.</p>
+
+<p>There is at least one other product out there that uses a more realistic sculpin for branding: <a href="http://www.ballastpoint.com/beer/sculpin/">Sculpin IPA</a>.</p>
+
+<p>About the only time I am ever asked about Sculpin's name is soon after someone sees Sculpin IPA in the wild. Some variation of, "I just realized why Sculpin has a fish as its mascot!" or, "Is this where you got the name for Sculpin?" accompanied by a photo like this one:</p>
+
+<p><a href="https://twitter.com/jmikola/status/509124371957678080"><img src="https://blog.sculpin.io/assets/images/posts/2015-03-09-sculpin-name-jmikola.jpg" alt="" /></a></p>
+
+<p>I can see how this assumption could be made, especially given the Sculpin IPA bottle also sports a fish. But nope.  Sculpin the static-site generator and Sculpin the beer both both have fish in their branding because they are both named after a fish.</p>
+
+<hr />
+
+<p>If you want to learn more about sculpin, the <a href="http://en.wikipedia.org/wiki/Sculpin">sculpin Wikipedia entry</a> has some useful information.</p>
+
+<p>If you want to <a href="http://ninjagrl.com/shop/products/sculpin-swim-with-the-cool-kids/">buy an art print of Jackson</a>, head over to ninjagrl's store and <a href="http://ninjagrl.com/shop/products/sculpin-swim-with-the-cool-kids/">order one today</a>!</p>
+]]></content>
+        </entry>
+            <entry>
+            <author>
+                <name>Beau Simensen</name>
+            </author>
+            <title type="html"><![CDATA[The Sculpin Roadmap for 2015]]></title>
+            <link href="https://blog.sculpin.io/2015/03/02/the-sculpin-roadmap-for-2015"/>
+            <updated>2015-03-02T00:00:00-08:00</updated>
+            <id>https://blog.sculpin.io/2015/03/02/the-sculpin-roadmap-for-2015</id>
+            <content type="html"><![CDATA[<p>I have big plans for Sculpin in 2015. I'm throwing them out here now both so the community can be aware of what to expect in 2015 but also for a little bit of accountability from the community.</p>
+
+<p>With the support of <a href="https://blog.sculpin.io/2015/02/23/meet-the-new-members-of-the-sculpin-organization/">the new members of the Sculpin organization</a>, it should be <strong>a lot</strong> easier!</p>
+
+<h2 id="sculpin-3">Sculpin 3</h2>
+
+<p>A stable release of Sculpin 3 will be available by the end of the year. This is an ambitious goal driven by several factors, mostly revolving around changing dependencies (and associated API changes) and changes being made directly to Sculpin's API.</p>
+
+<h2 id="symfony-3">Symfony 3</h2>
+
+<p>Symfony 3 is <a href="http://symfony.com/blog/symfony-3-0-the-roadmap">currently scheduled to be released by November of 2015</a>. I'd like <code>master</code> to start tracking Symfony 3 as soon as possible. The earlier we start testing out any changes to how Kernel or Bundles behave the better chances we have at influencing some decisions on how Symfony 3 will work.</p>
+
+<p>On the technical side, Sculpin is implemented as an application built around a Symfony Kernel. In Symfony 2, there was an assumption made that Kernel applications were by default going to be HTTP based. This was very much <em>not</em> the case for Sculpin. As such, we've had to make a lot of design tradeoffs to account for this.</p>
+
+<p>While the tradeoffs were mostly just in unneeded dependencies, the application as a whole would make more sense if we could leverage a Kernel without the constraints or implications that it has anything at all to do with HTTP. <a href="https://github.com/symfony/symfony/issues/9406#issuecomment-27389672">It didn't look like Symfony 3 was going to make these changes</a> but it <em>does</em> sound like Symfony 3 will be more split which could help clean things up a bit more. What this will look like is still a bit unclear to me.</p>
+
+<p>This may have major implications on the API and structure of how Sculpin is built. If the Bundle system changes a lot this will require reworking almost all of Sculpin's internal wiring. And depending on any Symfony 2.x backward compatibility layer being available, it may result in major changes to anyone else who has built extensions (or used third-party extensions) that were written for Sculpin.</p>
+
+<p>I've also considered abandoning Symfony Kernel as Sculpin 3's core if it turns out to be more trouble than it is worth. There have been huge advantages to using Kernel (didn't have to write my own bundle/extension layer) but it has come at a big cost. Symfony bundles are a barrier to entry for many people and if Kernel truly is <a href="https://github.com/symfony/symfony/issues/9406#issuecomment-27389672"><em>never</em></a> going to be usable outside of HTTP Kernel it might be best to rip the band-aid off sooner rather than later.</p>
+
+<p>This could potentially be a big deal, so I'd like to get feedback on who is actively working with Sculpin-specific extensions or using any generic Symfony 2 bundles so that I can get a better idea what kind of impact this will have on the community.</p>
+
+<p>Nothing has been decided yet, but this is looking to be the biggest change coming to Sculpin.</p>
+
+<h2 id="minimum-supported-php-version">Minimum Supported PHP Version</h2>
+
+<p>With Sculpin 3 the minimum supported PHP version will be bumped to PHP 7 <em>if there is a stable PHP 7 release available by the end of the year</em>. We'll be keeping an eye on the development of PHP 7 to see whether it will actually be ready in time to launch Sculpin 3 with support for PHP 7.</p>
+
+<p>This is a major change over the previously supported PHP 5.3.2. Even now I'm only running PHP 5.5 on my local development environments so this will be huge for me as well.</p>
+
+<p>Sculpin 2 will continue to work with PHP 5.3.2+ so people who are unable or unwilling to upgrade to PHP 7 will still be able to use Sculpin. However, I'd love to be able to help keep the PHP community moving toward using current and supported versions of PHP. As already hinted at, in the past I've been pretty horrible about this myself. Time to change that.</p>
+
+<h2 id="markdown%2C-markdown%2C-markdown">Markdown, Markdown, Markdown</h2>
+
+<p>I have long had my eyes on replacing php/markdown with <a href="https://github.com/kzykhys/Ciconia">Ciconia</a>. However, I'm no longer certain that Ciconia is going to be the best choice. Or more accurately, the <em>only other best</em> choice. As <a href="https://twitter.com/philsturgeon">Phil Sturgeon</a> has <a href="https://philsturgeon.uk/markdown/2014/11/30/state-of-markdown/">written about extensively</a>, there are many, many options when it comes to Markdown.</p>
+
+<p>Some work has already been contributed to make it so that you can provide other Markdown implementations for Sculpin. However, I'd like to revisit this and see if there are other solutions that may work better.</p>
+
+<p>There are many Markdown dialects available for PHP now so it is becoming more and more important for users of Sculpin to be able to choose the flavor that works for them.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>The documentation for Sculpin has been a sore spot for me for quite some time. There is just enough information in the docs currently to get you in trouble. They need to be revamped in a big way so that they are more useful, for more people, more often.</p>
+
+<p>Fortunately, Emma Jane is on the case. Helping to come up with a brand new set of documentation from the ground up will be one of her special projects this year. We'll let you know when we have more details so that if you have suggestions or requests for the documentation we can take them into consideration!</p>
+
+<h2 id="themes">Themes</h2>
+
+<p>This year we will make themes a first class citizen of Sculpin. There are a few lingering questions about how certain things should be handled but most of those questions are answered. The answer, however, was, "we have a lot of work to do."</p>
+
+<p><strong>If you are currently working with the [WIP] theme support for Sculpin, know that there may be major changes to the theme system over the next year.</strong></p>
+
+<h2 id="testing">Testing</h2>
+
+<p>I am sad to say that Sculpin is far from my most tested piece of software. A little has been done here or there but for the most part Sculpin is manually tested by users everywhere.</p>
+
+<p>This situation will change this year. New features and bug fixes will start to be accompanied by tests to start fleshing out Sculpin's test suite.</p>
+
+<h2 id="backwards-compatibility-concerns">Backwards Compatibility Concerns</h2>
+
+<h3 id="sculpin-site-layout">Sculpin Site Layout</h3>
+
+<p>I'm going to aim for keeping the basic site layout 100% backward compatible with Sculpin 2. This <em>may not</em> extend to configuration (more on that later) but it should be a high priority for us that a site that renders with Sculpin 2 can render with Sculpin 3 out of the box.</p>
+
+<p>For those of you that had to migrate (sometimes painfully) from another platform like Jekyll, I don't want to make you go through that again. At least not with your content. :)</p>
+
+<p><strong>The goal is for the content of your site to be rendered by Sculpin 3 without additional modification.</strong> The configuration to get your site to render the same way may change, though.</p>
+
+<h3 id="sculpin-site-configuration">Sculpin Site Configuration</h3>
+
+<p>In general I think that the Sculpin site configuration will not need to change. The <code>sculpin_site*.yml</code> files for certain should be able to stay the same. Where things are a little uncertain are with respect to the Kernel configuration.</p>
+
+<p>Whether the Kernel configuration needs to change is up to Symfony 3 and the direction they go with that. I suspect it will not change much but we won't know until we're deep into the migration.</p>
+
+<h3 id="sculpin-extensions">Sculpin Extensions</h3>
+
+<p>Depending on how radically different Symfony 3's Bundle architecture becomes it is possible that existing Sculpin extensions will no longer work in Sculpin 3. If you are building or have worked on Sculpin-specific extensions let me know in the comments so I can get a better idea what kind of impact this will have on the community.</p>
+
+<h2 id="sculpin-2-updates">Sculpin 2 Updates</h2>
+
+<p>I'm excited to see these changes roll out throughout the year. However, I want to try and avoid confusion while things will be changing at a fast pace on <code>master</code>.</p>
+
+<p>Some of the new features or bug fixes might want to make their way to Sculpin 2. We'll have to take them on a case-by-case basis.</p>
+
+<p>For the foreseeable future Sculpin 2 will be what will be delivered as <code>sculpin.phar</code> to new users. When we start building a phar for Sculpin 3 we'll announce how that will work.</p>
+
+<p>In the meantime, we're going to need to update the Sculpin build and deploy process along with the self update functionality so that if you are on Sculpin 2 <em>you stay on Sculpin 2 when you update</em>.</p>
+
+<p>We'll provide more news on any gotchas when we have a more concrete plan in place. Until then, know that it is safe to continue to get <code>sculpin.phar</code> for the time being and that you won't get any crazy Symfony 3 experimental Sculpin 3 code breaking your site.</p>
+
+<hr />
+
+<p>So, we have a lot of work ahead of us! If all goes as planned we should have a polished Sculpin 3 ready to go by the end of 2015. If you have questions, concerns, or suggestions, leave them in the comments or join us in #sculpin on freenode or Gitter #sculpin to chat with us realtime.</p>
+]]></content>
+        </entry>
+            <entry>
+            <author>
+                <name>Beau Simensen</name>
+            </author>
+            <title type="html"><![CDATA[Meet the New Members of the Sculpin Organization]]></title>
+            <link href="https://blog.sculpin.io/2015/02/23/meet-the-new-members-of-the-sculpin-organization"/>
+            <updated>2015-02-23T00:00:00-08:00</updated>
+            <id>https://blog.sculpin.io/2015/02/23/meet-the-new-members-of-the-sculpin-organization</id>
+            <content type="html"><![CDATA[<p><a href="https://sculpin.io">Sculpin</a> has been in <a href="http://srcmvn.com/blog/2012/12/04/an-update-on-sculpin/">on-again off-again</a> development <a href="http://srcmvn.com/blog/2012/02/19/something-new/">since December of 2011</a>. In that time, Sculpin has seen two major versions (only one of which ever saw any real use) and it has seen its user base increase by an incredible (but not-yet-quantified) amount.</p>
+
+<p>In that same time, I've grown both as a developer and as a member of the larger PHP community. Among other things, I'm attending and <a href="https://beau.io/talks/">speaking at conferences</a>, contributing to <a href="http://www.php-fig.org/">PHP-FIG</a> by way of Sculpin's membership in that organization, and doing what I can to share knowledge on <a href="http://thatpodcast.io/">That Podcast</a>.</p>
+
+<p>Lately I've grown more aware of the reality that Sculpin, as a project, is simply coasting. That isn't to say it isn't working for people. Far from it! But it <em>has</em> been more or less running on autopilot for the last year and a half.</p>
+
+<p>This is not how one responsibly runs an open-source project that is used by so many people.</p>
+
+<p>I  started to consider how horrible Sculpin's <a href="http://en.wikipedia.org/wiki/Bus_factor">bus factor</a> was (if you are new to this concept, essentially if I were to be hit by a bus Sculpin would cease to be). This is never a cheery topic, but one that becomes more important as a project becomes used by more people. At the very least it makes me a bottleneck to <em>everything</em> that happens in Sculpin. Bug reports. Responding to issues. Fixing bugs. Features. Building the phar. Deploying changes to the website. Everything.</p>
+
+<p>There are  features that I've started (like first class support for themes) that have stalled out as I've run into tough questions that  require more time than I have in order to adequately address. Minor bug reports have been ignored as I haven't had time to respond in-the-moment resulting in an embarrassingly large issue queue. Sculpin, of all things, didn't even have a blog for the first three years of its existence.</p>
+
+<p>I can do better.</p>
+
+<p>Or rather, <em>we</em> can do better.</p>
+
+<p>I came to the realization that I don't have to do this alone. There is a whole community of Sculpin users out there who are already helping people out in various ways. There are <a href="http://adamcod.es/2014/02/07/getting-started-with-sculpin.html">whole blog posts</a> written about features that were never documented <em>because they were never finished</em>. Works in progress that people have reverse engineered <em>because they needed it</em> and <em>other people wanted the knowledge to do it as well</em>.</p>
+
+<p>I didn't need to do better. I needed help.</p>
+
+<p>I decided to reach out to a handful of people that have been participating in the Sculpin community to ask if they would like to take a more active role in the Sculpin community as official members of the Sculpin team.</p>
+
+<p>They all said yes!</p>
+
+<p>Their roles and responsibilities will be varied but they will all have the freedom and flexibility to help with the issue queue, be more active in support roles,  help with design, and development of new features and fix bugs.</p>
+
+<p>In no particular order, here are the new team members of the Sculpin organization!</p>
+
+<h2 id="kevin-boyd-%40beryllium9">Kevin Boyd (<a href="https://twitter.com/beryllium9">@beryllium9</a>)</h2>
+
+<p>Kevin was one of Sculpin's earliest adopters. He has been a lot of help in #sculpin on IRC and maintains several Sculpin sites including <a href="http://www.gibsonindex.org/">Gibson Index</a> and <a href="http://whateverthing.com/">whateverthing.com</a>.</p>
+
+<h2 id="emma-jane-%40emmajanehw">Emma Jane (<a href="https://twitter.com/emmajanehw">@emmajanehw</a>)</h2>
+
+<p>I met Emma Jane at Lone Star PHP 2014. She had tried to use Sculpin previously and I wanted to try and work through some of the issues she ran into in person. It was not suprising to learn that her issues were mostly due to poor documentation. Fortunately, Emma will be helping to reshape the docs for Sculpin in 2015!</p>
+
+<h2 id="cees-jan-kiewiet-%40wyrihaximus">Cees-Jan Kiewiet (<a href="https://twitter.com/WyriHaximus">@WyriHaximus</a>)</h2>
+
+<p>Cees-Jan Kiewiet (<a href="http://blog.wyrihaximus.net/">blog.wyrihaximus.net</a>) contributed to one of the largest and most complicated patches to Sculpin outside of anything I've done myself. Always super help in IRC, WyriHaximus is a great asset to the Sculpin organization!</p>
+
+<h2 id="kayla-daniels-%40kayladnls">Kayla Daniels (<a href="https://twitter.com/kayladnls">@kayladnls</a>)</h2>
+
+<p>Kayla's (<a href="http://kayladnls.com">kayladnls.com</a>) involvement in the Sculpin organization was announced on an episode of <a href="http://nocapes.net/">#nocapes</a> earlier this year. You can see the episode <a href="https://www.youtube.com/watch?v=DIEywlvzDkk">here</a>. Kayla has been a great supporter of Sculpin over the last year or so and I'm excited to have her on the team!</p>
+
+<h2 id="chris-tankersley-%40dragonmantank">Chris Tankersley (<a href="https://twitter.com/dragonmantank">@dragonmantank</a>)</h2>
+
+<p>Chris (<a href="http://ctankersley.com/">ctankersley.com</a>) is one of a handful of people who I have seen actively trying to speak about Sculpin at user groups and conferences. It was an easy decision to ask if he would like to be involved in helping keep Sculpin going! You can see his <a href="https://nomadphp.com/">Nomad PHP</a> talk on Sculpin <a href="https://nomadphp.com/2014/11/22/static-sites-sculpin/">here</a>.</p>
+
+<h2 id="dave-marshall-%40davedevelopment">Dave Marshall (<a href="https://twitter.com/davedevelopment">@davedevelopment</a>)</h2>
+
+<p>My <a href="http://thatpodcast.io/">That Podcast</a> co-host is one of a few people who have reverse engineered my WIP theme code to create the theme for <a href="http://davedevelopment.co.uk/">davedevelopment.co.uk</a>. He has been hearing me talk about the guts of Sculpin for almost as long as I've been working on it so he has great insight into my vision for Sculpin.</p>
+
+<hr />
+
+<p>This is a big change for Sculpin and entirely new territory for me as a project maintainer. I'm looking forward to it, though, as I'm confident that the addition to the official Sculpin team will only bring positive change to the project.</p>
+
+<p>I want to thank them all for agreeing to help with Sculpin and to thank the rest of the community for all of your help and support and patience over the years.</p>
+
+<p>Thanks!</p>
+]]></content>
+        </entry>
+            <entry>
+            <author>
+                <name>Beau Simensen</name>
+            </author>
+            <title type="html"><![CDATA[Hello, World!]]></title>
+            <link href="https://blog.sculpin.io/2015/02/16/hello-world"/>
+            <updated>2015-02-16T00:00:00-08:00</updated>
+            <id>https://blog.sculpin.io/2015/02/16/hello-world</id>
+            <content type="html"><![CDATA[<p>After three years Sculpin finally has a blog. About time, right? We have a lot of news to deliver over the next few weeks! This is just the beginning of the changes Sculpin has in store for 2015.</p>
+
+<p>Now that we have a blog, what would you like to see us write about? Tips and tricks? Case studies? News? Events?</p>
+]]></content>
+        </entry>
+    </feed>
