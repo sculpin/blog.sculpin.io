@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <title>Deprecating Phar Distribution and Embedded Composer &middot; Sculpin's Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="https://blog.sculpin.io/2016/08/31/deprecating-phar-distribution-and-embedded-composer" />
+        <meta name="description" content="If you are currently using a globally installed phar distribution for Sculpin you should migrate to a per-project Composer installed version of Sculpin as soon as you can.
+
+TL;DR: The most recent version of the Sculpin phar is extremely out of date, incompatible with PHP 7, and should be considered unavailable ...">
+    <meta name="keywords" content="sculpin, " />
+
+    <!-- Facebook -->
+    <meta property="og:title" content="Deprecating Phar Distribution and Embedded Composer" />
+    <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://blog.sculpin.io/2016/08/31/deprecating-phar-distribution-and-embedded-composer" />
+    <meta property="og:description" content="If you are currently using a globally installed phar distribution for Sculpin you should migrate to a per-project Composer installed version of Sculpin as soon as you can.
+
+TL;DR: The most recent version of the Sculpin phar is extremely out of date, incompatible with PHP 7, and should be considered unavailable ..." />
+    <meta property="article:author" content="https://www.facebook.com/simensen" />
+    <meta property="article:publisher" content="https://www.facebook.com/getsculpin" />
+
+    <!-- Twitter -->
+            <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Deprecating Phar Distribution and Embedded Composer" />
+    <meta name="twitter:description" content="If you are currently using a globally installed phar distribution for Sculpin you should migrate to a per-project Composer installed version of Sculpin as soon as you can.
+
+TL;DR: The most recent version of the Sculpin phar is extremely out of date, incompatible with PHP 7, and should be considered unavailable ..." />
+    <meta name="twitter:creator" content="@beausimensen" />
+    <meta name="twitter:site" content="@getsculpin" />
+
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
+    <link href="https://blog.sculpin.io/assets/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://blog.sculpin.io/atom.xml" rel="alternate" title="#ossart" type="application/atom+xml">
+
+    <link rel="stylesheet" href="https://blog.sculpin.io/assets/css/screen.css?ab=10">
+    <link rel="stylesheet" href="https://blog.sculpin.io/assets/js/highlight/styles/github.css">
+    <script src="https://blog.sculpin.io/assets/js/modernizr.min.js"></script>
+     <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+.post .post-meta .author-image {
+    background-image: url(https://blog.sculpin.io/assets/images/authors/beau-100x100.jpg);
+}
+</style>
+</head>
+<body >
+    <div class="logo-readium-container">
+        <a href="https://blog.sculpin.io/" class="logo-readium fa fa-home"></a>
+        <!--<a href="https://blog.sculpin.io/">blog</a>-->
+        <!--<a href="https://sculpin.io">sculpin.io <i class="fa fa-external-link"></i></a>-->
+    </div>
+    <main class="content" role="main">
+            <article class="post">
+        <div class="post-meta">
+            <div class="post-reading">
+                <span class="post-reading-time"></span> read
+            </div>
+            <h1 class="post-title">Deprecating Phar Distribution and Embedded Composer</h1>
+            <div class="post-meta-text">
+                <span class="author-image">Author Image</span>
+                <a class="author-name" itemprop="author"  itemscope="" itemtype="http://schema.org/Person" href="https://blog.sculpin.io/authors/beau">Beau Simensen</a>
+                on
+                <time datetime="2016-08-31T00:00:00-07:00" pubdate>
+                    <span class='month'>Aug</span> <span class='day'>31st</span> <span class='year'>2016</span>
+                </time>
+            </div>
+        </div>
+        <section class="post-content">
+                        <p>If you are currently using a globally installed phar distribution for Sculpin you should migrate to a per-project Composer installed version of Sculpin as soon as you can.</p>
+
+<p><strong>TL;DR:</strong> The most recent version of the Sculpin phar is extremely out of date, incompatible with PHP 7, and should be considered unavailable by October 1st. Upgrade your website project ASAP.</p>
+
+<hr />
+
+<p>I have been putting this post off (and a few others) for six to twelve months. However, now that I am in a place where I can blog again, this is one issue that I need to address as quickly as possible.</p>
+
+<h2 id="any-plans-for-sculpin-3-would-have-required-reworking-the-phar-build-and-distribution-process">Any plans for Sculpin 3 would have required reworking the phar build and distribution process</h2>
+
+<p>In typical programmer fashion, I let myself get bogged down in the details of eventually needing to deploy Sculpin 3 phar builds rather than working on Sculpin 3. What little time I had to spend on Sculpin last year was sunk on solving this problem.</p>
+
+<p>The build process has always been kinda hacky and, unfortunately, not kept under revision control.</p>
+
+<p>I KNOW.</p>
+
+<p>Lesson learned.</p>
+
+<p>At some point last year I started working on this new deployment pipeline for building a phar that would be "major version aware." I didn't want <code>sculpin self-update</code> to bump people from Sculpin 2 to Sculpin 3 which turned out to be a weird and complicated problem to try and solve when you don't have a lot of time to throw at a project.</p>
+
+<p>Not surprisingly, I didn't get far. After a few months of tinkering I realized I no longer had the ability to deploy a current version of the Sculpin to download.sculpin.io.</p>
+
+<p>I don't want to go into the details on this as I'm quite embarrassed even sharing this much. At some point I needed to cut my losses on this part of the project and removed the instructions for installing Sculpin as a phar.</p>
+
+<h2 id="the-last-officially-available-sculpin-phar-is-not-compatible-with-php-7">The last officially available Sculpin phar is not compatible with PHP 7</h2>
+
+<p>One of my <a href="/2015/03/02/the-sculpin-roadmap-for-2015">lofty goals for Sculpin in 2015</a> was for Sculpin 3 to support only PHP 7 out of the box.</p>
+
+<p>Yeah, Sculpin 3 didn't happen.</p>
+
+<p>To make matters worse, because Sculpin relied on Composer, and Composer relied on another library that was not compatible with PHP 7 (it had a class named <code>String</code>), this meant that you cannot run Sculpin 2 installed as a phar with PHP 7. At all.</p>
+
+<h2 id="maintaining-phar-distributions-is-hard%2C-sculpin-or-otherwise">Maintaining phar distributions is hard, Sculpin or otherwise</h2>
+
+<p>Since I started distributing a phar for Sculpin I've been feeling a slight amount of pain with upkeep on maintaining the distribution of the phar.</p>
+
+<p>It isn't awful, but it always felt hacky. Fragile.</p>
+
+<p>I originally wrote Sculpin based off of bits and pieces I pulled from Composer. The self-update stuff was nice but felt haphazard and dangerous.</p>
+
+<p>Composer's installer evolved over time but mine didn't. Trying to pull more pieces in and figuring out what changed, and how, was more work than I had time to do.</p>
+
+<p>Since then, projects like Pádraic Brady's <a href="https://github.com/padraic/phar-updater">PHAR Updater</a> have come out. Migrating to something like this would most definitely make things better but given the amount of time I've had to engage in Sculpin changes over the last year it didn't seem likely I'd get around to it.</p>
+
+<p>If you're interested in what it would take to leverage Pádraic's project in a project like Sculpin (or your own project), Matthew Weier O'Phinney has a great tutorial on <a href="https://mwop.net/blog/2015-12-14-secure-phar-automation.html">Secure PHAR Automation</a>.</p>
+
+<p>This isn't a request for someone to help, although <a href="https://twitter.com/gbtekkie">Georgiana Gligor</a> has already offered to help fix the Sculpin phar build process and distribution. If we can find a way to automate the phar distribution <em>and it makes sense to do so</em>, I'm all for it. But is it worth it?</p>
+
+<p>I guess the question comes down to who is using the phar distribution currently that do not already have Composer installed? And next, who doesn't have Composer installed and refuses to do so in order to continue using Sculpin?</p>
+
+<h2 id="composer-is-the-best-way-to-distribute-sculpin-and-support-extensions">Composer is the best way to distribute Sculpin and support extensions</h2>
+
+<p>Sculpin was created to scratch an itch, tinker with distributing software as a phar, and to play with the idea of extending software by embedding Composer in an application.</p>
+
+<p>Composer was still quite new when I got involved in the Composer project and started writing Sculpin. It wasn't clear then just how powerful Composer would become in its ability to distribute software over the following years.</p>
+
+<p>As powerful as Composer has become, the idea of <a href="https://github.com/dflydev/dflydev-embedded-composer">Embedded Composer</a> never took off. Not entirely. It is used by a handful of phar distributed projects, including Sculpin, but by and large even Sculpin users have been confused by this Embedded Composer thing.</p>
+
+<p>The main problem I was never able to solve with Embedded Composer was the problem of dependencies changing within the phar over time and  being able to reconcile those with the installed dependencies on a project-by-project basis.</p>
+
+<p>The magic of Embedded Composer is that on a project-by-project basis, an application like Sculpin could look at what the project wanted installed and resolve those dependencies against the dependencies that were already provided by the phar itself. Magic!</p>
+
+<p>The downside of this is that it is only done once, at install time. Or again later at update time. But it isn't done automatically and certainly not done at runtime every time the application is run. Adding that functionality was potentially possible, but would it be worth it?</p>
+
+<p>Imagine running <code>sculpin self-update</code> only to find out that Sculpin determined that it was no longer compatible with your project's custom extensions. Now imagine that you have to spend a bunch of time fixing your extension before you can use Sculpin again to build your site.</p>
+
+<p>Blech.</p>
+
+<p>Embedded Composer may still be useful in some cases, so I haven't decided to deprecate it entirely. But in the case of Sculpin, its time is limited.</p>
+
+<h2 id="migrating-a-phar-managed-site-to-a-composer-managed-site">Migrating a phar managed site to a Composer managed site</h2>
+
+<p>The overall problem of the phar lagging master and PHP 7 issues was discussed at length in <a href="https://github.com/sculpin/sculpin/issues/297">issue #297</a>.</p>
+
+<p>It was here that we formulated the migration path from a <code>sculpin.json</code> Sculpin phar managed site to a <code>composer.json</code> Composer managed site.</p>
+
+<pre><code>git mv sculpin.json composer.json
+composer require sculpin/sculpin:^2.1@dev
+</code></pre>
+
+<p>Until Embedded Composer is finally removed from Sculpin, you will have to also require Embedded Composer:</p>
+
+<pre><code>git mv sculpin.json composer.json
+composer require sculpin/sculpin:^2.1@dev dflydev/embedded-composer:^1.0@dev
+</code></pre>
+
+<p>You may then want to update <code>.gitignore</code> to ignore <code>/vendor/</code> instead of  <code>/.sculpin</code></p>
+
+<p>To see what it looked like to migrate the main Sculpin website to Composer managed, check out this commit: <a href="https://github.com/sculpin/sculpin.io/commit/889caa2dc0dddaf02f04d6dc99f9f45f73579f8d">sculpin/sculpin.io@889caa2</a></p>
+
+<h2 id="loose-ends">Loose Ends</h2>
+
+<p>I'm slowing clawing back more time to work on Sculpin. The first things the team is going to focus on is cleaning up some loose ends like this so that Sculpin is more or less stable and installable for everyone by way of Composer.</p>
+        </section>
+        <footer class="post-footer">
+            <p class="share">
+                <span>
+                    Share this post on
+                </span>
+                <a class="icon-twitter" target="_blank" href="http://twitter.com/share?text=Deprecating%20Phar%20Distribution%20and%20Embedded%20Composer&amp;via=getsculpin&amp;source=https%3A%2F%2Fblog.sculpin.io%2F2016%2F08%2F31%2Fdeprecating-phar-distribution-and-embedded-composer">
+                    <i class="fa fa-twitter-square"></i><span class="hidden">twitter</span>
+                </a>
+
+                <a class="icon-reddit" target="_blank" href="http://reddit.com/submit?title=Deprecating%20Phar%20Distribution%20and%20Embedded%20Composer&amp;url=https%3A%2F%2Fblog.sculpin.io%2F2016%2F08%2F31%2Fdeprecating-phar-distribution-and-embedded-composer/">
+                    <i class="fa fa-reddit-square"></i><span class="hidden">reddit</span>
+                </a>
+
+                <a class="icon-hacker-news" target="_blank" href="http://news.ycombinator.com/submitlink?t=Deprecating%20Phar%20Distribution%20and%20Embedded%20Composer&amp;u=https%3A%2F%2Fblog.sculpin.io%2F2016%2F08%2F31%2Fdeprecating-phar-distribution-and-embedded-composer/">
+                    <i class="fa fa-hacker-news"></i><span class="hidden">hacker news</span>
+                </a>
+
+                <a class="icon-google-plus" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&url=https%3A%2F%2Fblog.sculpin.io%2F2016%2F08%2F31%2Fdeprecating-phar-distribution-and-embedded-composer">
+                    <i class="fa fa-google-plus-square"></i><span class="hidden">google+</span>
+                </a>
+
+                <a class="icon-facebook" target="_blank" href="//www.facebook.com/sharer.php?t=Deprecating%20Phar%20Distribution%20and%20Embedded%20Composer&amp;u=https%3A%2F%2Fblog.sculpin.io%2F2016%2F08%2F31%2Fdeprecating-phar-distribution-and-embedded-composer">
+                    <i class="fa fa-facebook-square"></i><span class="hidden">facebook</span>
+                </a>
+            </p>
+
+                    </footer>
+    </article>
+
+    <div id="disqus_thread" aria-live="polite">
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+        <footer class="content-footer">
+            &copy; 2019 <a href="http://dflydev.com/projects/sculpin/">dflydev</a>
+            &middot;
+            <a href="https://twitter.com/getsculpin" rel="publisher"><i class="fa fa-twitter-square"></i></a>
+            <a href="https://www.facebook.com/getsculpin"><i class="fa fa-facebook-square"></i></a>
+            &middot;
+            <a href="https://sculpin.io/">Sculpin powered</a>
+        </footer>
+    </main>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://blog.sculpin.io/assets/js/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript" src="https://blog.sculpin.io/assets/js/readingTime.min.js"></script>
+
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=312462998877190&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        (function () {
+            var twitterWidgets = document.createElement('script');
+            twitterWidgets.type = 'text/javascript';
+            twitterWidgets.async = true;
+            twitterWidgets.src = '//platform.twitter.com/widgets.js';
+            document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+        })();
+        (function() {
+            var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+            script.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+        })();
+    </script>
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-59664411-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+        <script>
+(function ($) {
+    "use strict";
+
+    $(document).ready(function(){
+        $('.post-reading').show();
+
+        // Calculates Reading Time
+        $('.post-content').readingTime({
+            readingTimeTarget: '.post-reading-time',
+            wordCountTarget: '.post-word-count',
+        });
+    });
+
+}(jQuery));
+    </script>
+    <script type="text/javascript">
+    var disqus_shortname = 'sculpinblog';
+    var disqus_identifier = 'https://blog.sculpin.io/2016/08/31/deprecating-phar-distribution-and-embedded-composer';
+    var disqus_url = 'https://blog.sculpin.io/2016/08/31/deprecating-phar-distribution-and-embedded-composer';
+    var disqus_script = 'embed.js';
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+</body>
+</html>

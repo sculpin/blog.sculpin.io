@@ -1,6 +1,6 @@
 {
     "require": {
-        "sculpin/sculpin": "dev-master"
+        "sculpin/sculpin": "3.0.0-rc4"
     },
     "scripts": {
         "css": [
