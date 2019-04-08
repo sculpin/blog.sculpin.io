@@ -17,8 +17,8 @@ for your help!
 * [lex111](https://github.com/lex111) (Alexey Pyltsyn)
 * [Xerkus](https://github.com/Xerkus) (Aleksei Khudiakov)
 * [GawainLynch](https://github.com/GawainLynch) (Gawain Lynch)
-* [dbu](https://github.com/dbu) (David Buchmann)
-* [ChristianRiesen](https://github.com/ChristianRiesen) (Christian Riesen)
+* [dbu](https://github.com/dbu) (David Buchmann, from **[Liip](https://www.liip.ch/en)**)
+* [ChristianRiesen](https://github.com/ChristianRiesen) (Christian Riesen, from **[Liip](https://www.liip.ch/en)**)
 
 New in Sculpin 3:
 
