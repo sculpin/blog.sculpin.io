@@ -11,8 +11,14 @@ several contributors, Sculpin 3 is finally here.
 This new release brings the project a bit more in line with modern PHP
 features and introduces some new commands and parameters.
 
-Shout out to [lex111](https://github.com/lex111) (Alexey Pyltsyn) and
-[Xerkus](https://github.com/Xerkus) (Aleksei Khudiakov) for all of their contributions - thanks for your help!
+Shout out to the following folks for all of their contributions - thanks
+for your help!
+
+* [lex111](https://github.com/lex111) (Alexey Pyltsyn)
+* [Xerkus](https://github.com/Xerkus) (Aleksei Khudiakov)
+* [GawainLynch](https://github.com/GawainLynch) (Gawain Lynch)
+* [dbu](https://github.com/dbu) (David Buchmann)
+* [ChristianRiesen](https://github.com/ChristianRiesen) (Christian Riesen)
 
 New in Sculpin 3:
 
@@ -41,6 +47,9 @@ However, there are some changes that affect backwards compatibility.
 * Bundles that write to the `sculpin.output_dir` parameter should be
   updated to use the `sculpin.writer` service instead, in order to
   facilitate the `--output-dir` parameter.
+* A number of core classes are now `final` and some methods have been
+  moved to `protected` and `private` to help reduce the code's
+  complexity.
 
 If you encounter issues with the new release or have suggestions, please
 use [GitHub Issues](https://github.com/sculpin/sculpin/issues) or the
