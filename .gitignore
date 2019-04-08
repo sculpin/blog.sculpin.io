@@ -2,3 +2,4 @@
 /docroot/
 /output_*/
 /sass/.sass-cache/
+/vendor
