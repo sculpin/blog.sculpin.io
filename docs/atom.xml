@@ -3,9 +3,93 @@
     <title><![CDATA[Sculpin's Blog]]></title>
     <link href="https://blog.sculpin.io/atom.xml" rel="self"/>
     <link href="https://blog.sculpin.io/"/>
-    <updated>2019-01-17T21:08:39-08:00</updated>
+    <updated>2019-04-09T21:38:09-07:00</updated>
     <id>https://blog.sculpin.io/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
+            <entry>
+            <author>
+                <name>Beau Simensen</name>
+            </author>
+            <title type="html"><![CDATA[Sculpin 3 Is Here]]></title>
+            <link href="https://blog.sculpin.io/2019/04/10/sculpin-3-is-here"/>
+            <updated>2019-04-10T00:00:00-07:00</updated>
+            <id>https://blog.sculpin.io/2019/04/10/sculpin-3-is-here</id>
+            <content type="html"><![CDATA[<p>It's been a long time coming, but thanks to the intrepid efforts of
+several contributors, Sculpin 3 is finally here.</p>
+
+<p>This new release brings the project a bit more in line with modern PHP
+features and introduces some new commands and parameters.</p>
+
+<p>Shout out to the following folks for all of their contributions - thanks
+for your help!</p>
+
+<ul>
+<li><a href="https://github.com/lex111">lex111</a> (Alexey Pyltsyn)</li>
+<li><a href="https://github.com/Xerkus">Xerkus</a> (Aleksei Khudiakov)</li>
+<li><a href="https://github.com/GawainLynch">GawainLynch</a> (Gawain Lynch)</li>
+<li><a href="https://github.com/dbu">dbu</a> (David Buchmann, from <strong><a href="https://www.liip.ch/en">Liip</a></strong>)</li>
+<li><a href="https://github.com/ChristianRiesen">ChristianRiesen</a> (Christian Riesen, from <strong><a href="https://www.liip.ch/en">Liip</a></strong>)</li>
+</ul>
+
+<p>New in Sculpin 3:</p>
+
+<ul>
+<li>Supports PHP 7.2 and higher!</li>
+<li>Initialize a bare-bones set of <code>source/</code> files using the new <code>init</code>
+command</li>
+<li>The <code>generate</code> command now supports <code>--source-dir</code> and <code>--output-dir</code>
+parameters</li>
+<li>Create custom content types with the new <code>content:create</code> command
+
+<ul>
+<li>Generates a very basic skeleton of templates</li>
+<li>Supports defining custom taxonomies (such as <code>tags</code> or <code>categories</code>
+or any other categorizations you need)</li>
+</ul></li>
+</ul>
+
+<p>However, there are some changes that affect backwards compatibility.</p>
+
+<ul>
+<li>PHP 7.2 is the minimum PHP version that Sculpin 3 will run on
+
+<ul>
+<li>Some new return typehints may require custom bundles to have
+their method signatures updated.</li>
+<li>A number of core classes are now <code>final</code> and some methods have been
+moved to <code>protected</code> and <code>private</code> to help reduce the code's
+complexity.</li>
+</ul></li>
+<li>Changes to the <code>symfony/yaml</code> component mean that certain YAML front
+matter values will need to be enclosed in quotes, particularly if they
+contain colons.
+
+<ul>
+<li>Sculpin should be quite verbose when this happens.</li>
+</ul></li>
+<li>Changes to pagination mean that certain URLs, such as
+"/blog/page/2.html", will change to a folder (e.g., "/blog/page/2/").
+
+<ul>
+<li>A gist can be found here with a concept for providing HTML-based
+redirects for legacy pagination files: <a href="https://gist.github.com/beryllium/a1b0be7b603486f5e39f869db8ff3484">https://gist.github.com/beryllium/a1b0be7b603486f5e39f869db8ff3484</a></li>
+</ul></li>
+<li>Bundles that write to the <code>sculpin.output_dir</code> parameter should be
+updated to use the <code>sculpin.writer</code> service instead, in order to
+respect the <code>--output-dir</code> parameter.</li>
+</ul>
+
+<p>Also, the Sculpin Blog Skeleton has begun being modernized, and the
+first stage of this involves setting things up with Yarn and Encore and
+Webpack instead of the previous solution for assets.</p>
+
+<p>If you encounter issues with the new release or have suggestions, please
+use <a href="https://github.com/sculpin/sculpin/issues">GitHub Issues</a> or the
+comments below.</p>
+
+<p>Enjoy!</p>
+]]></content>
+        </entry>
             <entry>
             <author>
                 <name>Beau Simensen</name>

@@ -1,5 +1,13 @@
 {
     "require": {
-        "sculpin/sculpin": "3.0.0-rc4"
+        "sculpin/sculpin": "3.0.0-rc5"
+    },
+    "scripts": {
+        "css": [
+            "sassc sass/screen.scss source/assets/css/screen.css"
+        ],
+        "sculpin:server": [
+            "vendor/bin/sculpin generate --watch --server"
+        ]
     }
 }

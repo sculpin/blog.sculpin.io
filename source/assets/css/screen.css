@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 $lightBase: #b3b3b1;
 $mediumBase: #888;
@@ -124,6 +123,7 @@ span.caption {
   color: rgba(80, 110, 121, 0.5);
   background-color: rgba(255, 255, 255, 0.9);
   font-size: .875em; }
+
 .content .post .post-meta-text {
   line-height: 2.125em;
   vertical-align: baseline;
@@ -158,6 +158,7 @@ span.caption {
     text-decoration: none; }
   .content .post .post-meta-text .tags {
     display: none; }
+
 .content .post .post-title {
   font-weight: 700;
   font-style: normal;
@@ -166,8 +167,10 @@ span.caption {
   line-height: 1.1;
   color: #506E79;
   margin-bottom: .375em; }
+
 .content .post footer.post-footer {
   border-top: 1px solid #B1C4CB; }
+
 .content .post .post-content, .content .post footer.post-footer {
   width: 100%;
   font-family: Linux Libertine;
@@ -181,6 +184,14 @@ span.caption {
     padding-bottom: 1.4em; }
     .content .post .post-content p:first-of-type, .content .post footer.post-footer p:first-of-type {
       padding-top: 1.4em; }
+  .content .post .post-content ul, .content .post footer.post-footer ul {
+    margin-top: 0;
+    line-height: 1.5em;
+    font-size: 1.1em; }
+    .content .post .post-content ul code, .content .post footer.post-footer ul code {
+      background-color: #eee;
+      color: #770000;
+      padding: 1px 2px 1px 2px; }
   .content .post .post-content > pre, .content .post footer.post-footer > pre {
     padding: 0 0 2.8em; }
     .content .post .post-content > pre > code, .content .post footer.post-footer > pre > code {
@@ -206,12 +217,13 @@ span.caption {
     color: #506E79; }
     .content .post .post-content h2 a:after, .content .post footer.post-footer h2 a:after {
       font: normal normal normal 14px/1 FontAwesome;
-      content: " "; }
+      content: " \f08e"; }
   .content .post .post-content .tags, .content .post footer.post-footer .tags {
     color: #B1C4CB; }
     .content .post .post-content .tags a, .content .post footer.post-footer .tags a {
       color: inherit;
       text-decoration: none; }
+
 .content .post .share {
   color: #506E79;
   vertical-align: middle; }
@@ -273,12 +285,12 @@ main[role="main"] {
   top: .5em;
   z-index: 99;
   /*
-  background-color: rgba(255,255,255,.90);
-  border-top-right-radius: 1.25em;
-  border-bottom-right-radius: 1.25em;
-  border: 2px solid $darkBase;
-  border-left: none;
-  */
+	background-color: rgba(255,255,255,.90);
+	border-top-right-radius: 1.25em;
+	border-bottom-right-radius: 1.25em;
+	border: 2px solid $darkBase;
+	border-left: none;
+	*/
   height: 2.75em;
   vertical-align: middle;
   color: black; }
@@ -329,15 +341,15 @@ main[role="main"] {
     font-size: 1.5em; }
     main[role="main"] > header p {
       font-size: .75em; }
-
   .content article .article-item .post-header h2.post-title {
     font-size: 2em; }
-
   .content .post .post-title {
     font-size: 2em; } }
+
 @media only screen and (min-width: 640px) and (orientation: landscape) {
   main[role="main"] {
     margin-top: 7em; } }
+
 /*
 	> header {
 		font-size: 2em;
@@ -363,19 +375,18 @@ main[role="main"] {
     font-size: 2em; }
     main[role="main"] > header p {
       font-size: .625em; }
-
   .content article .article-item .post-header {
     position: relative;
     /*
-    .year-group {
-    	font-size: 2em;
-    	position: absolute;
-    	display: block;
-    	left: 0;
-    	margin-left: -5.5em;
-    	width: 2.5em;
-    }
-    */ }
+			.year-group {
+				font-size: 2em;
+				position: absolute;
+				display: block;
+				left: 0;
+				margin-left: -5.5em;
+				width: 2.5em;
+			}
+			*/ }
     .content article .article-item .post-header .year-group {
       font-size: 1em;
       position: absolute;
@@ -408,11 +419,11 @@ main[role="main"] {
     display: inline; }
   .content article .article-item .on {
     display: none; }
-
   .content .post .post-title {
     font-size: 3.125em; }
   .content .post .post-meta-text .tags {
     display: inline; } }
+
 @media only screen and (min-width: 1024px) and (orientation: landscape) {
   main[role="main"] {
     margin-top: 10em; } }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97ac5d6d62b98f69f2d6fa00f5528289",
+    "content-hash": "cd00ee4dd3c5f69a005a4dad19902b38",
     "packages": [
         {
             "name": "dflydev/ant-path-matcher",
@@ -1174,16 +1174,16 @@
         },
         {
             "name": "sculpin/sculpin",
-            "version": "3.0.0-rc4",
+            "version": "3.0.0-rc5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sculpin/sculpin.git",
-                "reference": "0a6d5c4072bec3d9f4fde99ad6dbb30c0679bf07"
+                "reference": "429bcff7261caa418acdc259be389fa305d0a275"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sculpin/sculpin/zipball/0a6d5c4072bec3d9f4fde99ad6dbb30c0679bf07",
-                "reference": "0a6d5c4072bec3d9f4fde99ad6dbb30c0679bf07",
+                "url": "https://api.github.com/repos/sculpin/sculpin/zipball/429bcff7261caa418acdc259be389fa305d0a275",
+                "reference": "429bcff7261caa418acdc259be389fa305d0a275",
                 "shasum": ""
             },
             "require": {
@@ -1273,7 +1273,7 @@
                 "site",
                 "static"
             ],
-            "time": "2019-04-04T05:15:28+00:00"
+            "time": "2019-04-08T06:44:17+00:00"
         },
         {
             "name": "sculpin/sculpin-theme-composer-plugin",
