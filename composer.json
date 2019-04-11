@@ -8,6 +8,9 @@
         ],
         "sculpin:server": [
             "vendor/bin/sculpin generate --watch --server"
+        ],
+        "publish": [
+            "vendor/bin/sculpin generate --env=prod --output-dir=docs"
         ]
     }
 }

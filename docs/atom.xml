@@ -3,7 +3,7 @@
     <title><![CDATA[Sculpin's Blog]]></title>
     <link href="https://blog.sculpin.io/atom.xml" rel="self"/>
     <link href="https://blog.sculpin.io/"/>
-    <updated>2019-04-09T21:38:09-07:00</updated>
+    <updated>2019-04-10T23:00:54-07:00</updated>
     <id>https://blog.sculpin.io/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
@@ -65,7 +65,10 @@ matter values will need to be enclosed in quotes, particularly if they
 contain colons.
 
 <ul>
-<li>Sculpin should be quite verbose when this happens.</li>
+<li>Sculpin is quite verbose when this happens. It outputs the name of
+the affected file, the affected line number, and an excerpt of the
+line, alongside an explanation of the YAML syntax issue that
+caused the error.</li>
 </ul></li>
 <li>Changes to pagination mean that certain URLs, such as
 "/blog/page/2.html", will change to a folder (e.g., "/blog/page/2/").

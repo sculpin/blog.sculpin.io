@@ -43,7 +43,10 @@ However, there are some changes that affect backwards compatibility.
 * Changes to the `symfony/yaml` component mean that certain YAML front
   matter values will need to be enclosed in quotes, particularly if they
   contain colons.
-    * Sculpin should be quite verbose when this happens.
+    * Sculpin is quite verbose when this happens. It outputs the name of
+      the affected file, the affected line number, and an excerpt of the
+      line, alongside an explanation of the YAML syntax issue that
+      caused the error.
 * Changes to pagination mean that certain URLs, such as
   "/blog/page/2.html", will change to a folder (e.g., "/blog/page/2/").
   * A gist can be found here with a concept for providing HTML-based
