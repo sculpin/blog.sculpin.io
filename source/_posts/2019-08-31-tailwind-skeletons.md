@@ -7,7 +7,7 @@ author:
 ---
 Tailwind CSS is a new approach to working with CSS in websites, and I've
 created two new skeletons for Sculpin users who want to incorporate
-Tailwind into their sites.
+[Tailwind](https://tailwindcss.com/) into their sites.
 
 Tailwind relies on utility classes to individually declare the
 appearance of each part of your website. It's similar, in some ways, to
@@ -177,3 +177,9 @@ The rest of the landing page content is stored in `source/index.html`.
 See the main [Sculpin documentation](https://sculpin.io/getstarted/) for
 more information about how these files work together, as well as tips on
 deploying your Sculpin website.
+
+Tailwind CSS documentation can be found at the [Tailwind website](https://tailwindcss.com/docs/utility-first).
+
+Sculpin uses the Twig templating engine, which has powerful
+functionality to help you build amazing websites. The documentation is
+available on the [Twig website](https://twig.symfony.com/).
