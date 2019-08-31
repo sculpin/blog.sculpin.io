@@ -3,9 +3,191 @@
     <title><![CDATA[Sculpin's Blog]]></title>
     <link href="https://blog.sculpin.io/atom.xml" rel="self"/>
     <link href="https://blog.sculpin.io/"/>
-    <updated>2019-04-10T23:00:54-07:00</updated>
+    <updated>2019-08-30T23:57:22-07:00</updated>
     <id>https://blog.sculpin.io/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
+            <entry>
+            <author>
+                <name>Beau Simensen</name>
+            </author>
+            <title type="html"><![CDATA[Tailwind Skeletons for Sculpin]]></title>
+            <link href="https://blog.sculpin.io/2019/08/31/tailwind-skeletons"/>
+            <updated>2019-08-31T00:00:00-07:00</updated>
+            <id>https://blog.sculpin.io/2019/08/31/tailwind-skeletons</id>
+            <content type="html"><![CDATA[<p>Tailwind CSS is a new approach to working with CSS in websites, and I've
+created two new skeletons for Sculpin users who want to incorporate
+Tailwind into their sites.</p>
+
+<p>Tailwind relies on utility classes to individually declare the
+appearance of each part of your website. It's similar, in some ways, to
+using HTML "style" attributes. But, because it is very strict in what
+options are available, it guides you toward having consistent styling
+that is easy to manage across your site.</p>
+
+<p>If you find yourself reaching for CSS classes, you can extract your
+existing Tailwind implementations into reusable styling components. It's
+advised to only do this when you spot clear abstractions that will help
+enhance your website - after all, one goal of the utility-first approach
+to CSS is to prevent premature abstraction.</p>
+
+<p>For users who don't want to use Tailwind or the more-complex build
+process that comes with that approach, you may want to look into the
+<code>sculpin init</code> command. It will start you with a blank slate to build
+up from.</p>
+
+<p>Both of the Tailwind skeletons require that <code>yarn</code> is installed in
+addition to <code>composer</code>, but the <code>sculpin init</code> variation only requires
+<code>composer</code>.</p>
+
+<h2 id="the-blog">The Blog</h2>
+
+<p>The first skeleton is, of course, a Blog skeleton. This works similarly
+to the existing Bootstrap-based Sculpin blog skeleton, but provides a
+default layout that uses Tailwind utility classes to deliver a Desktop
+and Mobile-friendly blog experience.</p>
+
+<div style="text-align: center;">
+<img style="max-height: 350px;" src="/assets/images/posts/2019-08-31-desktop-blog-screenshot.png" alt="Desktop Web Screenshot"/>
+
+<img style="max-height: 350px;" src="/assets/images/posts/2019-08-31-mobile-blog-screenshot.png" alt="Mobile Web Screenshot"/>
+</div>
+
+<p>There's a <a href="https://beryllium.github.io/sculpin-tailwind-blog-skeleton/">demo site</a> if you want to give it a spin, and take a look at
+the <a href="https://github.com/beryllium/sculpin-tailwind-blog-skeleton">GitHub repository</a> if you want to see how things are tied together.</p>
+
+<h2 id="the-product%2Fcompany-landing-page">The Product/Company Landing Page</h2>
+
+<p>Static site generators are great for more than just blogs. Corporate and
+product websites are prime candidates for statically generated content!</p>
+
+<p>With that in mind, I've created a bit of a tongue-in-cheek skeleton that
+pretends to be a Product landing page. Again, it is Desktop and
+Mobile-friendly, and ready for you to get into the Tailwind assets and
+start tailoring it to your product or organization.</p>
+
+<div style="text-align: center;">
+<img style="max-height: 350px;" src="/assets/images/posts/2019-08-31-desktop-landing-screenshot.png" alt="Desktop Web Screenshot"/>
+
+<img style="max-height: 350px;" src="/assets/images/posts/2019-08-31-mobile-landing-screenshot.png" alt="Mobile Web Screenshot"/>
+</div>
+
+<p>Check out the demo site and visit the GitHub repository:</p>
+
+<p><a href="https://beryllium.github.io/sculpin-tailwind-landing-skeleton/">Demo site</a></p>
+
+<p><a href="https://github.com/beryllium/sculpin-tailwind-landing-skeleton">GitHub repository</a></p>
+
+<h2 id="how-to-get-started">How To Get Started</h2>
+
+<p>You have two ways to get started with these skeletons. There's the
+original method of using Composer's <code>create-project</code> command, and then
+there's the extra-crispy method of GitHub's new "template repositories"
+feature.</p>
+
+<h3 id="composer">Composer</h3>
+
+<p>The command for getting started with Composer looks like:</p>
+
+<pre><code>composer create-project beryllium/sculpin-tailwind-blog-skeleton myblog
+</code></pre>
+
+<p>Or, for a landing page:</p>
+
+<pre><code>composer create-project beryllium/sculpin-tailwind-landing-skeleton myproduct
+</code></pre>
+
+<h3 id="template-repository">Template Repository</h3>
+
+<p>To be honest, I haven't tried out the template repository approach yet,
+but I did set the flag on both of these repos. This makes a button show
+up directly in the GitHub interface to get rolling with a repository
+based on the skeleton.</p>
+
+<p>You click the button, give your new repository a name, and then clone
+it locally like any of your other GitHub repositories.</p>
+
+<p>With any luck, this will make it easier to spin up new Sculpin projects.</p>
+
+<h3 id="launching-the-skeletons">Launching The Skeletons</h3>
+
+<p>Once you've got the code checked out locally, you can install
+dependencies:</p>
+
+<pre><code>composer install
+yarn install
+</code></pre>
+
+<p>Then, the tricky part part is that we need to have two "watch" processes
+running at the same time. One of them is the Sculpin watch process,
+which monitors the filesystem for changes to your HTML or Markdown. The
+second one is the 'Webpack Encore' watch process, which detects changes
+to the SCSS files used by Tailwind to configure your project's settings
+and appearance.</p>
+
+<p>In one terminal window, you can start the Sculpin watch command like so:</p>
+
+<pre><code>vendor/bin/sculpin generate --watch --server
+</code></pre>
+
+<p>In a second terminal window, start the Encore watch command:</p>
+
+<pre><code>yarn encore dev --watch
+</code></pre>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>Once they are running, you should be able to load the skeleton
+      site at http://localhost:8000/</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<p>The shortcut "Ctrl-C" is usually the best way to exit these process when
+you're done.</p>
+
+<p>If you close the terminal window without exiting the processes,
+depending on your operating system's settings, it might accidentally
+leave them running invisibly in the background. If such a situation
+arises, you can use some useful Linux/Unix commands to locate and
+terminate the processes:</p>
+
+<pre><code>ps auwx | grep sculpin
+
+# Now look for the "PID", or Process ID, of the Sculpin process.
+# You can use it to terminate the process, like this example of PID 1234:
+
+kill -9 1234
+</code></pre>
+
+<p>You can do the same for Encore, if necessary.</p>
+
+<h3 id="working-with-the-skeletons">Working With The Skeletons</h3>
+
+<p>The files that make up these skeletons are located inside the <code>source/</code>
+folder.</p>
+
+<p>To edit the layout of the blog skeleton type, modify the file
+<code>source/_layouts/default.html</code>. To change the layout of an individual
+blog post page, edit the file <code>source/_views/post.html</code>. And to add new
+blog posts or edit blog posts, create files in the <code>source/_posts/</code>
+folder. I recommend following the naming convention of
+"Year-Month-Day-SlugText.md", as it makes posts easier to find when
+listing the contents of large blogs.</p>
+
+<p>To edit the layout of the landing page skeleton, modify the file
+<code>source/_views/default.html.twig</code>. The top part of the main page is
+dictated by the <code>source/_views/landing.html.twig</code> file, which pulls in
+variables from the YAML front-matter of the <code>source/index.html</code> file as
+well as variables stored in <code>app/config/sculpin_site.yml</code>.</p>
+
+<p>The rest of the landing page content is stored in <code>source/index.html</code>.</p>
+
+<p>See the main <a href="https://sculpin.io/getstarted/">Sculpin documentation</a> for
+more information about how these files work together, as well as tips on
+deploying your Sculpin website.</p>
+]]></content>
+        </entry>
             <entry>
             <author>
                 <name>Beau Simensen</name>
