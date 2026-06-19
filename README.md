@@ -6,7 +6,7 @@ This repository contains (almost) everything that makes up
 
 Powered by [Sculpin](https://github.com/sculpin/sculpin). =)
 
-&copy; 2015-2018 dflydev
+&copy; 2015-2026 dflydev
 
 
 Build
