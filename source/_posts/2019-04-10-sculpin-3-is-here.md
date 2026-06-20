@@ -3,7 +3,6 @@ title: "Sculpin 3 Is Here"
 author:
   shortname: kevin
   name: Kevin Boyd
-  twitter: beryllium9
 ---
 It's been a long time coming, but thanks to the intrepid efforts of
 several contributors, Sculpin 3 is finally here.

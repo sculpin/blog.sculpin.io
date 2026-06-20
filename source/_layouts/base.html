@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ site.url }}/assets/js/highlight/styles/github.css">
     <script src="{{ site.url }}/assets/js/modernizr.min.js"></script>
      <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     {% block styles %}{% endblock %}
 </head>
@@ -34,10 +34,9 @@
         {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
 
         <footer class="content-footer">
-            &copy; {{ "now"|date("Y") }} <a href="http://dflydev.com/projects/sculpin/">dflydev</a>
+            &copy; {{ "now"|date("Y") }} dflydev
             &middot;
-            <a href="https://twitter.com/getsculpin" rel="publisher"><i class="fa fa-twitter-square"></i></a>
-            <a href="https://www.facebook.com/getsculpin"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://phpc.social/@sculpin" rel="publisher"><i class="fa fa-twitter-square"></i></a>
             &middot;
             <a href="https://sculpin.io/">Sculpin powered</a>
         </footer>
@@ -48,28 +47,7 @@
     <script type="text/javascript" src="{{ site.url }}/assets/js/readingTime.min.js"></script>
 
     <div id="fb-root"></div>
-    <script>
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=312462998877190&version=v2.0";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
 
-        (function () {
-            var twitterWidgets = document.createElement('script');
-            twitterWidgets.type = 'text/javascript';
-            twitterWidgets.async = true;
-            twitterWidgets.src = '//platform.twitter.com/widgets.js';
-            document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-        })();
-        (function() {
-            var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-            script.src = 'https://apis.google.com/js/plusone.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-        })();
-    </script>
     {% if site.google_analytics_tracking_id %}
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

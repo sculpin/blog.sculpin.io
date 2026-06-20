@@ -1,13 +1,18 @@
 {
     "require": {
-        "sculpin/sculpin": "3.*"
+        "sculpin/sculpin": "dev-4.0.x-dev"
     },
     "scripts": {
-        "sculpin:server": [
+        "watch": [
             "vendor/bin/sculpin generate --watch --server"
         ],
         "publish": [
             "vendor/bin/sculpin generate --env=prod --output-dir=docs"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "sculpin/sculpin-theme-composer-plugin": true
+        }
     }
 }

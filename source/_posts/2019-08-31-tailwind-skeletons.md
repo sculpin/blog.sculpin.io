@@ -3,7 +3,6 @@ title: "Tailwind Skeletons for Sculpin"
 author:
   shortname: kevin
   name: Kevin Boyd
-  twitter: beryllium9
 ---
 Tailwind CSS is a new approach to working with CSS in websites, and I've
 created two new skeletons for Sculpin users who want to incorporate

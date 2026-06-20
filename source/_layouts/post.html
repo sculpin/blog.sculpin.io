@@ -18,8 +18,6 @@
     {% endif %}
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ page.blocks.content|raw|striptags|split(' ')|slice(0,50)|join(' ') }} ...{% endif %}" />
-    <meta property="article:author" content="https://www.facebook.com/{{ page.author.facebook }}" />
-    <meta property="article:publisher" content="https://www.facebook.com/getsculpin" />
 
     <!-- Twitter -->
     {% if page.social_image %}
@@ -34,7 +32,7 @@
     <meta name="twitter:title" content="{{ page.title }}" />
     <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ page.blocks.content|raw|striptags|split(' ')|slice(0,50)|join(' ') }} ...{% endif %}" />
     <meta name="twitter:creator" content="@{{ page.author.twitter }}" />
-    <meta name="twitter:site" content="@getsculpin" />
+    <meta name="twitter:site" content="https://sculpin.io" />
 {% endblock %}
 {% block content_wrapper %}
     <article class="post">
