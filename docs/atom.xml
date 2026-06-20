@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title><![CDATA[Sculpin's Blog]]></title>
-    <link href="https://blog.sculpin.io/atom.xml" rel="self"/>
-    <link href="https://blog.sculpin.io/"/>
-    <updated>2019-08-31T00:02:46-07:00</updated>
-    <id>https://blog.sculpin.io/</id>
-        <generator uri="http://sculpin.io/">Sculpin</generator>
+    <link href="https://blog.sculpin.io q/atom.xml" rel="self"/>
+    <link href="https://blog.sculpin.io q/"/>
+    <updated>2026-06-20T23:55:28+00:00</updated>
+    <id>https://blog.sculpin.io q/</id>
+        <generator uri="https://sculpin.io/">Sculpin</generator>
             <entry>
             <author>
-                <name>Beau Simensen</name>
+                <name><![CDATA[Kevin Boyd]]></name>
             </author>
             <title type="html"><![CDATA[Tailwind Skeletons for Sculpin]]></title>
-            <link href="https://blog.sculpin.io/2019/08/31/tailwind-skeletons"/>
-            <updated>2019-08-31T00:00:00-07:00</updated>
-            <id>https://blog.sculpin.io/2019/08/31/tailwind-skeletons</id>
+            <link href="https://blog.sculpin.io q/2019/08/31/tailwind-skeletons"/>
+            <updated>2019-08-31T00:00:00+00:00</updated>
+            <id>https://blog.sculpin.io q/2019/08/31/tailwind-skeletons</id>
             <content type="html"><![CDATA[<p>Tailwind CSS is a new approach to working with CSS in websites, and I've
 created two new skeletons for Sculpin users who want to incorporate
 <a href="https://tailwindcss.com/">Tailwind</a> into their sites.</p>
@@ -196,12 +196,12 @@ available on the <a href="https://twig.symfony.com/">Twig website</a>.</p>
         </entry>
             <entry>
             <author>
-                <name>Beau Simensen</name>
+                <name><![CDATA[Kevin Boyd]]></name>
             </author>
             <title type="html"><![CDATA[Sculpin 3 Is Here]]></title>
-            <link href="https://blog.sculpin.io/2019/04/10/sculpin-3-is-here"/>
-            <updated>2019-04-10T00:00:00-07:00</updated>
-            <id>https://blog.sculpin.io/2019/04/10/sculpin-3-is-here</id>
+            <link href="https://blog.sculpin.io q/2019/04/10/sculpin-3-is-here"/>
+            <updated>2019-04-10T00:00:00+00:00</updated>
+            <id>https://blog.sculpin.io q/2019/04/10/sculpin-3-is-here</id>
             <content type="html"><![CDATA[<p>It's been a long time coming, but thanks to the intrepid efforts of
 several contributors, Sculpin 3 is finally here.</p>
 
@@ -283,12 +283,12 @@ comments below.</p>
         </entry>
             <entry>
             <author>
-                <name>Beau Simensen</name>
+                <name><![CDATA[Chris Tankersley]]></name>
             </author>
             <title type="html"><![CDATA[A New Maintainer Appears!]]></title>
-            <link href="https://blog.sculpin.io/2017/05/19/a-new-maintainer-appears"/>
-            <updated>2017-05-19T00:00:00-07:00</updated>
-            <id>https://blog.sculpin.io/2017/05/19/a-new-maintainer-appears</id>
+            <link href="https://blog.sculpin.io q/2017/05/19/a-new-maintainer-appears"/>
+            <updated>2017-05-19T00:00:00+00:00</updated>
+            <id>https://blog.sculpin.io q/2017/05/19/a-new-maintainer-appears</id>
             <content type="html"><![CDATA[<p>Effective immediately, I have handed over full ownership of the Sculpin project to Chris Tankersley. Until otherwise specified, the rest of the <a href="https://blog.sculpin.io/2015/02/23/meet-the-new-members-of-the-sculpin-organization">Sculpin Organization</a> will remain intact.</p>
 
 <p>This was not an easy decision for me to make. I've been thinking about it for a few years now. It isn't fair to the community for my continued lack of time and energy to hold Sculpin back from moving forward.</p>
@@ -320,12 +320,12 @@ comments below.</p>
         </entry>
             <entry>
             <author>
-                <name>Beau Simensen</name>
+                <name><![CDATA[Beau Simensen]]></name>
             </author>
             <title type="html"><![CDATA[Deprecating Phar Distribution and Embedded Composer]]></title>
-            <link href="https://blog.sculpin.io/2016/08/31/deprecating-phar-distribution-and-embedded-composer"/>
-            <updated>2016-08-31T00:00:00-07:00</updated>
-            <id>https://blog.sculpin.io/2016/08/31/deprecating-phar-distribution-and-embedded-composer</id>
+            <link href="https://blog.sculpin.io q/2016/08/31/deprecating-phar-distribution-and-embedded-composer"/>
+            <updated>2016-08-31T00:00:00+00:00</updated>
+            <id>https://blog.sculpin.io q/2016/08/31/deprecating-phar-distribution-and-embedded-composer</id>
             <content type="html"><![CDATA[<p>If you are currently using a globally installed phar distribution for Sculpin you should migrate to a per-project Composer installed version of Sculpin as soon as you can.</p>
 
 <p><strong>TL;DR:</strong> The most recent version of the Sculpin phar is extremely out of date, incompatible with PHP 7, and should be considered unavailable by October 1st. Upgrade your website project ASAP.</p>
@@ -423,13 +423,13 @@ composer require sculpin/sculpin:^2.1@dev dflydev/embedded-composer:^1.0@dev
         </entry>
             <entry>
             <author>
-                <name>Beau Simensen</name>
+                <name><![CDATA[Beau Simensen]]></name>
             </author>
             <title type="html"><![CDATA[What is in a name?]]></title>
-            <link href="https://blog.sculpin.io/2015/03/09/what-is-in-a-name"/>
-            <updated>2015-03-09T00:00:00-07:00</updated>
-            <id>https://blog.sculpin.io/2015/03/09/what-is-in-a-name</id>
-            <content type="html"><![CDATA[<p><a href="https://www.flickr.com/photos/beryllium/6917782491/"><img src="https://blog.sculpin.io/assets/images/posts/2015-03-09-sturgeon-poacher-by-beryllium.jpg" alt="" /></a><br>
+            <link href="https://blog.sculpin.io q/2015/03/09/what-is-in-a-name"/>
+            <updated>2015-03-09T00:00:00+00:00</updated>
+            <id>https://blog.sculpin.io q/2015/03/09/what-is-in-a-name</id>
+            <content type="html"><![CDATA[<p><a href="https://www.flickr.com/photos/beryllium/6917782491/"><img src="https://blog.sculpin.io q/assets/images/posts/2015-03-09-sturgeon-poacher-by-beryllium.jpg" alt="" /></a><br>
 <span class="caption"><a href="https://www.flickr.com/photos/beryllium/6917782491/">bottom feeder</a> by <a href="https://twitter.com/beryllium9">@beryllium</a></span></p>
 
 <p>I have always appreciated O'Reilly's colophon describing the creature on the cover of each book. It was always my intention to have something similar for Sculpin. At long last, here is the story behind the name Sculpin and Jackson, Sculpin's mascot.</p>
@@ -458,7 +458,7 @@ composer require sculpin/sculpin:^2.1@dev dflydev/embedded-composer:^1.0@dev
 
 <p>Thus Jackson, a freshly painted ninjagrl original, became the official mascot for Sculpin.</p>
 
-<p><img src="https://blog.sculpin.io/assets/images/posts/2015-03-09-sculpin-wall-art.jpg" alt="" /></p>
+<p><img src="https://blog.sculpin.io q/assets/images/posts/2015-03-09-sculpin-wall-art.jpg" alt="" /></p>
 
 <p>Jackson doesn't look like a sculpin. Truth be told, a sculpin is not very pretty. Making something look simple and friendly but still being "distinctively a sculpin" would have been more trouble than it was worth.</p>
 
@@ -466,7 +466,7 @@ composer require sculpin/sculpin:^2.1@dev dflydev/embedded-composer:^1.0@dev
 
 <p>At the same time, I didn't want it to look too much like a fish that people would recognize. For example, if I had chosen something that looked obviously like a clownfish or a blue tang I do not think it would have worked.</p>
 
-<p><a href="http://www.palantir.net/blog/diving-sculpin-designers-holiday-fueled-adventure"><img src="https://blog.sculpin.io/assets/images/posts/2015-03-09-sculpin-are-ugly-palantir.jpg" alt="" /></a></p>
+<p><a href="http://www.palantir.net/blog/diving-sculpin-designers-holiday-fueled-adventure"><img src="https://blog.sculpin.io q/assets/images/posts/2015-03-09-sculpin-are-ugly-palantir.jpg" alt="" /></a></p>
 
 <p><a href="http://www.palantir.net/blog/diving-sculpin-designers-holiday-fueled-adventure">One of the earliest blog posts on Sculpin</a>, written by <a href="http://www.palantir.net/about/team/ashley-cyborski">Ashley Cyborski</a> of <a href="http://palantir.net/">Palantir.net</a>, included a nice drawing stating, "Sculpin are UGLY but this one is GOOD."</p>
 
@@ -476,7 +476,7 @@ composer require sculpin/sculpin:^2.1@dev dflydev/embedded-composer:^1.0@dev
 
 <p>About the only time I am ever asked about Sculpin's name is soon after someone sees Sculpin IPA in the wild. Some variation of, "I just realized why Sculpin has a fish as its mascot!" or, "Is this where you got the name for Sculpin?" accompanied by a photo like this one:</p>
 
-<p><a href="https://twitter.com/jmikola/status/509124371957678080"><img src="https://blog.sculpin.io/assets/images/posts/2015-03-09-sculpin-name-jmikola.jpg" alt="" /></a></p>
+<p><a href="https://twitter.com/jmikola/status/509124371957678080"><img src="https://blog.sculpin.io q/assets/images/posts/2015-03-09-sculpin-name-jmikola.jpg" alt="" /></a></p>
 
 <p>I can see how this assumption could be made, especially given the Sculpin IPA bottle also sports a fish. But nope.  Sculpin the static-site generator and Sculpin the beer both both have fish in their branding because they are both named after a fish.</p>
 
@@ -489,15 +489,15 @@ composer require sculpin/sculpin:^2.1@dev dflydev/embedded-composer:^1.0@dev
         </entry>
             <entry>
             <author>
-                <name>Beau Simensen</name>
+                <name><![CDATA[Beau Simensen]]></name>
             </author>
             <title type="html"><![CDATA[The Sculpin Roadmap for 2015]]></title>
-            <link href="https://blog.sculpin.io/2015/03/02/the-sculpin-roadmap-for-2015"/>
-            <updated>2015-03-02T00:00:00-08:00</updated>
-            <id>https://blog.sculpin.io/2015/03/02/the-sculpin-roadmap-for-2015</id>
+            <link href="https://blog.sculpin.io q/2015/03/02/the-sculpin-roadmap-for-2015"/>
+            <updated>2015-03-02T00:00:00+00:00</updated>
+            <id>https://blog.sculpin.io q/2015/03/02/the-sculpin-roadmap-for-2015</id>
             <content type="html"><![CDATA[<p>I have big plans for Sculpin in 2015. I'm throwing them out here now both so the community can be aware of what to expect in 2015 but also for a little bit of accountability from the community.</p>
 
-<p>With the support of <a href="https://blog.sculpin.io/2015/02/23/meet-the-new-members-of-the-sculpin-organization/">the new members of the Sculpin organization</a>, it should be <strong>a lot</strong> easier!</p>
+<p>With the support of <a href="https://blog.sculpin.io q/2015/02/23/meet-the-new-members-of-the-sculpin-organization/">the new members of the Sculpin organization</a>, it should be <strong>a lot</strong> easier!</p>
 
 <h2 id="sculpin-3">Sculpin 3</h2>
 
@@ -592,12 +592,12 @@ composer require sculpin/sculpin:^2.1@dev dflydev/embedded-composer:^1.0@dev
         </entry>
             <entry>
             <author>
-                <name>Beau Simensen</name>
+                <name><![CDATA[Beau Simensen]]></name>
             </author>
             <title type="html"><![CDATA[Meet the New Members of the Sculpin Organization]]></title>
-            <link href="https://blog.sculpin.io/2015/02/23/meet-the-new-members-of-the-sculpin-organization"/>
-            <updated>2015-02-23T00:00:00-08:00</updated>
-            <id>https://blog.sculpin.io/2015/02/23/meet-the-new-members-of-the-sculpin-organization</id>
+            <link href="https://blog.sculpin.io q/2015/02/23/meet-the-new-members-of-the-sculpin-organization"/>
+            <updated>2015-02-23T00:00:00+00:00</updated>
+            <id>https://blog.sculpin.io q/2015/02/23/meet-the-new-members-of-the-sculpin-organization</id>
             <content type="html"><![CDATA[<p><a href="https://sculpin.io">Sculpin</a> has been in <a href="http://srcmvn.com/blog/2012/12/04/an-update-on-sculpin/">on-again off-again</a> development <a href="http://srcmvn.com/blog/2012/02/19/something-new/">since December of 2011</a>. In that time, Sculpin has seen two major versions (only one of which ever saw any real use) and it has seen its user base increase by an incredible (but not-yet-quantified) amount.</p>
 
 <p>In that same time, I've grown both as a developer and as a member of the larger PHP community. Among other things, I'm attending and <a href="https://beau.io/talks/">speaking at conferences</a>, contributing to <a href="http://www.php-fig.org/">PHP-FIG</a> by way of Sculpin's membership in that organization, and doing what I can to share knowledge on <a href="http://thatpodcast.io/">That Podcast</a>.</p>
@@ -661,12 +661,12 @@ composer require sculpin/sculpin:^2.1@dev dflydev/embedded-composer:^1.0@dev
         </entry>
             <entry>
             <author>
-                <name>Beau Simensen</name>
+                <name><![CDATA[Beau Simensen]]></name>
             </author>
             <title type="html"><![CDATA[Hello, World!]]></title>
-            <link href="https://blog.sculpin.io/2015/02/16/hello-world"/>
-            <updated>2015-02-16T00:00:00-08:00</updated>
-            <id>https://blog.sculpin.io/2015/02/16/hello-world</id>
+            <link href="https://blog.sculpin.io q/2015/02/16/hello-world"/>
+            <updated>2015-02-16T00:00:00+00:00</updated>
+            <id>https://blog.sculpin.io q/2015/02/16/hello-world</id>
             <content type="html"><![CDATA[<p>After three years Sculpin finally has a blog. About time, right? We have a lot of news to deliver over the next few weeks! This is just the beginning of the changes Sculpin has in store for 2015.</p>
 
 <p>Now that we have a blog, what would you like to see us write about? Tips and tricks? Case studies? News? Events?</p>
