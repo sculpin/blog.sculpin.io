@@ -3,9 +3,58 @@
     <title><![CDATA[Sculpin's Blog]]></title>
     <link href="https://blog.sculpin.io/atom.xml" rel="self"/>
     <link href="https://blog.sculpin.io/"/>
-    <updated>2026-07-19T21:05:40+00:00</updated>
+    <updated>2026-08-28T19:22:51+00:00</updated>
     <id>https://blog.sculpin.io/</id>
         <generator uri="https://sculpin.io/">Sculpin</generator>
+            <entry>
+            <author>
+                <name><![CDATA[Oliver Davies]]></name>
+            </author>
+            <title type="html"><![CDATA[Sculpin is now in nixpkgs]]></title>
+            <link href="https://blog.sculpin.io/2026/08/28/sculpin-in-nixpkgs"/>
+            <updated>2026-08-28T00:00:00+00:00</updated>
+            <id>https://blog.sculpin.io/2026/08/28/sculpin-in-nixpkgs</id>
+            <content type="html"><![CDATA[<p><a href="https://search.nixos.org/packages">nixpkgs</a> is the <a href="https://repology.org/repositories/statistics/total">largest online package repository</a> with more than 140,000 packages, and now Sculpin is one of them because Sculpin 3.3.1 <a href="https://github.com/NixOS/nixpkgs/pull/476433">has been merged</a> into nixpkgs-unstable!</p>
+
+<p>Now, if you use the <code>nix</code> command line tool or the NixOS operating system, you can easily create a new shell with Sculpin installed by running this one command:</p>
+
+<pre><code>nix shell "github:NixOS/nixpkgs/nixpkgs-unstable#sculpin"
+</code></pre>
+
+<p>No need to have PHP or Composer installed separately.</p>
+
+<p>Within the shell, run your <code>sculpin</code> commands normally.</p>
+
+<p>When finished, exit the shell and Sculpin will be gone until you need it again.</p>
+
+<p>Or, run an ad-hoc command directly:</p>
+
+<pre><code>nix run "github:NixOS/nixpkgs/nixpkgs-unstable#sculpin" generate -- --server --watch
+</code></pre>
+
+<p>This is how I'm running this website to write this post. :)</p>
+
+<p>In both cases, Nix will download and install all of the dependencies for you, so Sculpin just works.</p>
+
+<h2 id="what-about-flakes%3F">What about flakes?</h2>
+
+<p>For an example using a flake, see my <a href="https://git.oliverdavies.uk/opdavies/nix-sculpin-template">nix-sculpin-template</a>.</p>
+
+<h2 id="what-about-bundles%3F">What about bundles?</h2>
+
+<p>If you use bundles in your Sculpin site, you can create your own <code>autoload.php</code> file and wrap Sculpin to use it.</p>
+
+<p>See <a href="https://git.oliverdavies.uk/opdavies/oliverdavies.uk/src/branch/main/www.oliverdavies.uk">my website repository</a> for an example.</p>
+
+<h2 id="want-to-learn-more-about-nix%3F">Want to learn more about Nix?</h2>
+
+<p>Check out <a href="https://nixos.org">https://nixos.org</a> or <a href="https://www.oliverdavies.uk/presentations/nix-developers">my "Nix for Developers" talk</a>.</p>
+
+<hr />
+
+<p>As a long-time Sculpin user, it's great to see it in nixpkgs and bring together two of my favourite open source projects.</p>
+]]></content>
+        </entry>
             <entry>
             <author>
                 <name><![CDATA[Kevin Boyd]]></name>
